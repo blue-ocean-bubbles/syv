@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default function Map() {
+export default function Status() {
+
   return (
     <div>
-      map
+    hi
     </div>
-  )
-}
+  );
+};

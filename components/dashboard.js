@@ -8,7 +8,7 @@ export default function Dashboard({ children }) {
 
   const links = [
     { path: '', display: 'Home' },
-    { path: '/register', display: 'Register To Vote' },
+    { path: '/registration', display: 'Register To Vote' },
     { path: '/registration-status', display: 'Check Registration Status' }
   ];
 
