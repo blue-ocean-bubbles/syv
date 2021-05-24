@@ -12,7 +12,8 @@ export default function Dashboard({ children }) {
     { path: '/check-registration', display: 'Check Registration Status' },
     { path: '/reminder', display: 'Sign-up For Reminders' },
     { path: '/absentee-ballot', display: 'Request Absentee Ballot' },
-    { path: '/pledge', display: 'Pledge to Vote' }
+    { path: '/pledge', display: 'Pledge to Vote' },
+    { path: '/ballot', display: 'Online Ballot' }
   ];
 
   const createLink = (link) => {

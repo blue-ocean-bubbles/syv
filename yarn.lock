@@ -251,7 +251,15 @@
   "resolved" "https://registry.npmjs.org/at-least-node/-/at-least-node-1.0.0.tgz"
   "version" "1.0.0"
 
+<<<<<<< HEAD
 "autoprefixer@^10.2.5":
+=======
+<<<<<<< HEAD
+"autoprefixer@^10.0.2", "autoprefixer@^10.2.5":
+=======
+"autoprefixer@^10.2.5":
+>>>>>>> d05543e2894ef24a56d51a4822bfe06dbcf0393f
+>>>>>>> 8a2219deba33972ffe55eac52e3fd01efe8573d1
   "integrity" "sha512-7H4AJZXvSsn62SqZyJCP+1AWwOuoYpUfK6ot9vm0e87XD6mT8lDywc9D9OTJPMULyGcvmIxzTAMeG2Cc+YX+fA=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.2.5.tgz"
   "version" "10.2.5"
@@ -1546,12 +1554,22 @@
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
   "version" "2.0.0"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+"nanoid@^3.1.22", "nanoid@^3.1.23":
+=======
+>>>>>>> 8a2219deba33972ffe55eac52e3fd01efe8573d1
 "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
   "resolved" "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
   "version" "2.1.2"
 
 "nanoid@^3.1.18", "nanoid@^3.1.22", "nanoid@^3.1.23":
+<<<<<<< HEAD
+=======
+>>>>>>> d05543e2894ef24a56d51a4822bfe06dbcf0393f
+>>>>>>> 8a2219deba33972ffe55eac52e3fd01efe8573d1
   "integrity" "sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw=="
   "resolved" "https://registry.npmjs.org/nanoid/-/nanoid-3.1.23.tgz"
   "version" "3.1.23"
@@ -1926,7 +1944,15 @@
     "source-map" "^0.6.1"
     "supports-color" "^5.4.0"
 
+<<<<<<< HEAD
 "postcss@^8.1.6", "postcss@^8.2.1", "postcss@^8.3.0":
+=======
+<<<<<<< HEAD
+"postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.13", "postcss@^8.1.6", "postcss@^8.2.1", "postcss@^8.2.2", "postcss@^8.3.0":
+=======
+"postcss@^8.1.6", "postcss@^8.2.1", "postcss@^8.3.0":
+>>>>>>> d05543e2894ef24a56d51a4822bfe06dbcf0393f
+>>>>>>> 8a2219deba33972ffe55eac52e3fd01efe8573d1
   "integrity" "sha512-+ogXpdAjWGa+fdYY5BQ96V/6tAo+TdSSIMP5huJBIygdWwKtVoB5JWZ7yUd4xZ8r+8Kvvx4nyg/PQ071H4UtcQ=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.3.0.tgz"
   "version" "8.3.0"
@@ -2273,11 +2299,20 @@
   dependencies:
     "is-arrayish" "^0.3.1"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 8a2219deba33972ffe55eac52e3fd01efe8573d1
 "sliced@1.0.1":
   "integrity" "sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E="
   "resolved" "https://registry.npmjs.org/sliced/-/sliced-1.0.1.tgz"
   "version" "1.0.1"
 
+<<<<<<< HEAD
+=======
+>>>>>>> d05543e2894ef24a56d51a4822bfe06dbcf0393f
+>>>>>>> 8a2219deba33972ffe55eac52e3fd01efe8573d1
 "source-map-js@^0.6.2":
   "integrity" "sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug=="
   "resolved" "https://registry.npmjs.org/source-map-js/-/source-map-js-0.6.2.tgz"

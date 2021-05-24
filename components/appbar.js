@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function AppBar(props) {
   return (
-    <nav className="bg-whitesmoke flex items-center shadow-md">
+    <nav className="bg-white flex items-center shadow-md z-50">
       <div className="p-4 cursor-pointer inline-block">
         <Link href="/">
           <Image src="/logo.jpeg" width="56px" height="56px" />
