@@ -8,17 +8,20 @@ export default function Dashboard({ children }) {
 
   const links = [
     { path: '', display: 'Home' },
-    { path: '/registration', display: 'Register To Vote' },
-    { path: '/registration-status', display: 'Check Registration Status' }
+    { path: '/register', display: 'Register To Vote' },
+    { path: '/check-registration', display: 'Check Registration Status' },
+    { path: '/reminder', display: 'Sign-up For Reminders' },
+    { path: '/absentee-ballot', display: 'Request Absentee Ballot' },
+    { path: '/pledge', display: 'Pledge to Vote' }
   ];
 
   const createLink = (link) => {
     let styles = 'text-lg font-bold cursor-pointer px-4 py-4 ';
 
     if (router.pathname === '/dashboard' + link.path) {
-      styles += 'text-black bg-white bg-opacity-80 shadow-sm';
+      styles += 'text-gray-800 bg-gray bg-opacity-80 shadow-sm';
     } else {
-      styles += 'text-white hover:bg-white hover:bg-opacity-50';
+      styles += 'text-blue-200 hover:bg-white hover:bg-opacity-50';
     }
 
     return (
