@@ -14,12 +14,13 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className={styles.container}>
-      <Image className="bg-cover" src="https://vote411-prod.s3.amazonaws.com/s3fs-public/2019-07/HomepageHero_blurred_lowres.jpg" alt="background" width={1000} height={500} />
+      <Image className="bg-cover bg-center" src="https://vote411-prod.s3.amazonaws.com/s3fs-public/2019-07/HomepageHero_blurred_lowres.jpg" alt="background" height={600} width={1000}/>
+
+      {/* <div className="bg-auto bg-no-repeat bg-center" style={{backgroundImage: `url(${"https://vote411-prod.s3.amazonaws.com/s3fs-public/2019-07/HomepageHero_blurred_lowres.jpg"})`}}></div> */}
+
         <h1 className={styles.title}>
           Welcome to Secure Your Vote
         </h1>
-
-
         <div className={styles.grid}>
           <a href="https://www.vote.org/register-to-vote/" className={styles.card}>
             <h2>Register To Vote &rarr;</h2>
