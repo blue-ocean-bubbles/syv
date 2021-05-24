@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import Dashboard from '../../components/dashboard';
 
-export default function Registration() {
-  useEffect(() => {
-    let lm = `<iframe src="https://register.vote.org/?partner=111111&campaign=free-tools" width="100%" marginheight="0" frameborder="0" id="frame1" scrollable ="no"></iframe><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script><script type="text/javascript">iFrameResize({ log:true, checkOrigin:false});</script>`
-
-  })
-
+export default function Register() {
   return (
-    <div>
-      <iframe src="https://register.vote.org/?partner=111111&campaign=free-tools" width="100%" marginheight="0" frameborder="0" id="frame1" scrollable="no"></iframe><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js"></script><script type="text/javascript">iFrameResize({log:true, checkOrigin:false})</script>
-    </div>
+    <Dashboard>
+      <iframe src="https://register.vote.org/?partner=111111&campaign=free-tools" className="h-full w-full pt-4"></iframe>
+    </Dashboard>
   );
 };
