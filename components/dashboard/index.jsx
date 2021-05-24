@@ -1,4 +1,7 @@
+/* eslint-disable max-len */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -29,12 +32,40 @@ export default function Dashboard({ children }) {
       ),
     },
     {
-      path: '/registration-status',
+      path: '/check-registration',
       display: 'Check Registration Status',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
           <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
           <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+        </svg>
+      ),
+    },
+    {
+      path: '/reminder',
+      display: 'Sign-up For Reminders',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+        </svg>
+      ),
+    },
+    {
+      path: '/absentee-ballot',
+      display: 'Request Absentee Ballot',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z" />
+          <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+        </svg>
+      ),
+    },
+    {
+      path: '/pledge',
+      display: 'Pledge to Vote',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
         </svg>
       ),
     },
@@ -50,7 +81,7 @@ export default function Dashboard({ children }) {
     }
 
     return (
-      <div className={styles} onClick={(e) => router.push(`/dashboard${link.path}`)} role="button">
+      <div className={styles} onClick={() => router.push(`/dashboard${link.path}`)} role="button" tabIndex={0}>
         {link.icon}
         {' '}
         {link.display}
@@ -67,7 +98,7 @@ export default function Dashboard({ children }) {
       <div className="flex flex-row flex-grow h-full">
         <div className="w-1/6 h-full shadow-xl z-1 bg-gradient-to-br from-blue-600 to-blue-700">
           <nav className="flex flex-col gap-y-4 mt-8">
-            {links.map((link, i) => <React.Fragment key={i}>{createLink(link)}</React.Fragment>)}
+            {links.map((link) => <React.Fragment key={link.path}>{createLink(link)}</React.Fragment>)}
           </nav>
         </div>
         <div className="flex-grow h-full z-0">
@@ -77,3 +108,11 @@ export default function Dashboard({ children }) {
     </div>
   );
 }
+
+Dashboard.propTypes = {
+  children: PropTypes.element,
+};
+
+Dashboard.defaultProps = {
+  children: React.createElement('div'),
+};
