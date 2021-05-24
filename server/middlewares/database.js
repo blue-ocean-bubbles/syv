@@ -6,6 +6,7 @@ async function database(req, res, next) {
     if (!global.mongoose) {
       // create the mongoose/mongo connection
       global.mongoose = await mongoose.connect(process.env.MONGODB_URI, {
+        useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
