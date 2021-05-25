@@ -9,12 +9,13 @@ handler.use(middleware);
 // POST api/ballot
 handler.post(async (req, res) => {
   try {
-    for (const vote of req.body.votes) {
+    for (const vote of req.body) {
       await Tally.updateOne(vote, { $inc: { count: 1 } }, { upsert: true });
     }
+    res.status(201).json({ message: 'ballot counted' });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: 'not tubular' });
+    res.status(500).json({ message: 'something went wrong while counting ballot' });
   }
 });
 
