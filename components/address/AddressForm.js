@@ -3,9 +3,8 @@ import AddressSuggest from './AddressSuggest';
 import AddressInput from './AddressInput';
 import axios from 'axios';
 import styles from '../../styles/Home.module.css';
+const { APP_ID_GEO, APP_KEY_GEO } = require('../../config.js').default;
 
-const APP_ID = '8lOreHYr4Plm3Hx2eewN';
-const APP_KEY ='7vDIwoHH7fP1p_NZ9MLGqHcfYaPapW-iC3jeiaeRBgs';
 var isValid = false;
 
 class AddressForm extends Component {
@@ -18,6 +17,7 @@ class AddressForm extends Component {
     this.onCheck = this.onCheck.bind(this);
     this.onClear = this.onClear.bind(this);
     this.submitForm = this.submitForm.bind(this);
+    console.log('Check for Props', APP_ID_GEO, 'Check for Props', APP_KEY_GEO)
   }
 
   onQuery(evt) {
@@ -31,8 +31,8 @@ class AddressForm extends Component {
     const self = this;
     axios.get('https://geocode.search.hereapi.com/v1/geocode',
       {'params': {
-        'app_id': APP_ID,
-        'apiKey': APP_KEY,
+        'APP_ID_GEO': APP_ID_GEO,
+        'apiKey': APP_KEY_GEO,
         'q': query,
         'maxresults': 1,
       }}).then(function (response) {
@@ -85,8 +85,8 @@ class AddressForm extends Component {
 
   onCheck(evt) {
     let params = {
-      'app_id': APP_ID,
-      'apiKey': APP_KEY,
+      'APP_ID_GEO': APP_ID_GEO,
+      'apiKey': APP_KEY_GEO,
       'q': this.state.fullAddress
     }
 
@@ -101,10 +101,10 @@ class AddressForm extends Component {
     }
 
     const self = this;
-    axios.get('https://geocode.search.hereapi.com/v1/geocode?apiKey=7vDIwoHH7fP1p_NZ9MLGqHcfYaPapW-iC3jeiaeRBgs',
+    axios.get('https://geocode.search.hereapi.com/v1/geocode',
       {'params': {
-        'app_id': APP_ID,
-        'apiKey': APP_KEY,
+        'APP_ID_GEO': APP_ID_GEO,
+        'apiKey': APP_KEY_GEO,
         'q': this.state.fullAddress,
         'maxresults': 1,
       } }
@@ -212,5 +212,7 @@ class AddressForm extends Component {
     );
   }
 }
+
+
 
 export default AddressForm;
