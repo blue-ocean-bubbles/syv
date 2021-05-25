@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-sequences */
 /* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
@@ -6,6 +7,8 @@
 /* eslint-disable react/sort-comp */
 import React, { Component } from 'react';
 import axios from 'axios';
+import Confetti from 'react-confetti';
+// eslint-disable-next-line import/no-unresolved
 import AddressSuggest from './AddressSuggest';
 import AddressInput from './AddressInput';
 import styles from '../../styles/Home.module.css';
@@ -179,6 +182,10 @@ class AddressForm extends Component {
 
     const co = this.state.address;
     const pos = co.postalCode.split('-')[0];
+
+    const width = 1500;
+    const height = 1100;
+
     if (co.state === 'Colorado' || (pos >= '80001' && pos <= '81658') || co.postalCode === 'CO') {
       isValid = true;
       return (
@@ -190,6 +197,10 @@ class AddressForm extends Component {
           ,
           {this.state.coords.lon}
           .
+          <Confetti
+            width={width}
+            height={height}
+          />
         </div>
       );
     }

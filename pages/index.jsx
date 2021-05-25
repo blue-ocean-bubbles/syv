@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Navbar from '../components/navbar';
@@ -32,9 +31,9 @@ export default function Home() {
               <h2>Register To Vote &rarr;</h2>
             </a>
 
-            <Link href="/dashboard" className={styles.card}>
+            <a className={styles.card} href="/dashboard">
               <h2>Whats on your ballot &rarr;</h2>
-            </Link>
+            </a>
 
             <a
               href="https://app.mt.gov/voterinfo/"
