@@ -95,8 +95,8 @@ export default function Dashboard({ children }) {
         <title>Secure Your Vote - Dashboard</title>
       </Head>
       <AppBar />
-      <div className="flex flex-row flex-grow h-full">
-        <div className="w-1/6 h-full shadow-xl z-1 bg-gradient-to-br from-blue-600 to-blue-700">
+      <div className="flex flex-row flex-grow">
+        <div className="w-1/6 min-w-1/6 max-w-1/6 h-full shadow-xl z-1 bg-gradient-to-br from-blue-600 to-blue-700 flex-grow">
           <nav className="flex flex-col gap-y-4 mt-8">
             {links.map((link) => <React.Fragment key={link.path}>{createLink(link)}</React.Fragment>)}
           </nav>
