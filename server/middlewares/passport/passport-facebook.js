@@ -8,8 +8,10 @@ passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_ID,
     clientSecret: process.env.FACEBOOK_SECRET,
     callbackURL: "http://localhost:3000/api/auth/facebook/callback",
+    profileFields: ['email', 'name', 'displayName', 'photos']
     },
     function(accessToken, refreshToken, profile, done) {
+        console.log(profile, 'profile')
        User.findOne({ email:  profile.emails[0].value })
         .then((user) => {
           if (user) {
