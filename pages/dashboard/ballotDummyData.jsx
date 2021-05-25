@@ -6,33 +6,129 @@ export default {
     ocdDivisionId: 'ocd-division/country:us',
   },
   normalizedInput: {
-    line1: '7700 Juan Way',
-    city: 'Fair Oaks',
-    state: 'CA',
-    zip: '95628',
+    line1: '715 Blue River Parkway',
+    city: 'Silverthorne',
+    state: 'CO',
+    zip: '',
   },
-  pollingLocations: [
-    {
-      address: {
-        line1: '7777 Sunset Ave ',
-        city: 'Fair Oaks',
-        state: 'CA',
-        zip: '95628',
-      },
-      notes: '',
-      pollingHours: '',
-      sources: [
-        {
-          name: 'Voting Information Project',
-          official: true,
-        },
-      ],
-    },
-  ],
   contests: [
     {
       type: 'General',
-      office: 'US House - District 7',
+      office: 'US Senate',
+      level: [
+        'country',
+      ],
+      roles: [
+        'legislatorUpperBody',
+      ],
+      district: {
+        name: 'Colorado',
+        scope: 'statewide',
+        id: 'ocd-division/country:us/state:co',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Mark Udall',
+          party: 'Democratic',
+          candidateUrl: 'http://www.markudall.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/udallforcolorado',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/MarkUdall2014',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/channel/UC_SFwyWOrcCfUoHtRTmWpAw',
+            },
+          ],
+        },
+        {
+          name: 'Cory Gardner',
+          party: 'Republican',
+          candidateUrl: 'http://corygardnerforsenate.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/Cory.Gardner.For.Senate',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/CoryGardner',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/channel/UCaHpoEaT_-5EB0H-TAcWH_w',
+            },
+          ],
+        },
+        {
+          name: 'Gaylon Kent',
+          party: 'Libertarian',
+          candidateUrl: 'http://www.thefreedomtrain.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/GaylonForSenate',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/GaylonKent',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/channel/UCQuPA96c0FQfxDLMNOfoRMg',
+            },
+          ],
+        },
+        {
+          name: 'Raul Acosta',
+          party: 'Unaffiliated',
+        },
+        {
+          name: 'Bill Hammons',
+          party: 'Unity Party of Colorado',
+          candidateUrl: 'http://www.unityparty.us/hammons-unity-party.htm',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/unitypartybill',
+            },
+          ],
+        },
+        {
+          name: 'Steve Shogan',
+          party: 'Unaffiliated',
+          candidateUrl: 'http://shoganforsenate.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/shoganforsenate',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/shoganforsenate',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/channel/UC4Am8r4McIjuuARTr-oRLYg',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'US House - District 2',
       level: [
         'country',
       ],
@@ -40,9 +136,9 @@ export default {
         'legislatorLowerBody',
       ],
       district: {
-        name: "California's 7th congressional district",
+        name: "Colorado's 2nd congressional district",
         scope: 'congressional',
-        id: 'ocd-division/country:us/state:ca/cd:7',
+        id: 'ocd-division/country:us/state:co/cd:2',
       },
       sources: [
         {
@@ -52,40 +148,40 @@ export default {
       ],
       candidates: [
         {
-          name: 'Ami Bera',
+          name: 'Jared Polis',
           party: 'Democratic',
-          candidateUrl: 'http://www.beraforcongress.com/',
+          candidateUrl: 'http://www.polisforcongress.com/',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/BeraForCongress',
+              id: 'https://www.facebook.com/gojaredgo',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/beraforcongress',
+              id: 'https://twitter.com/jaredpolis',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UCQ8OY8ok21csr_BOIC-e-Lw',
+              id: 'https://www.youtube.com/user/polisforcongress',
             },
           ],
         },
         {
-          name: 'Doug Ose',
+          name: 'George Leing',
           party: 'Republican',
-          candidateUrl: 'http://www.dougose.com/home',
+          candidateUrl: 'http://www.georgeleing.com',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/dougose2014',
+              id: 'https://www.facebook.com/georgeleingforcolorado',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/DougOse',
+              id: 'https://twitter.com/georgeleing',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UCblwhrzxYvqY1GdHvb54Cpw',
+              id: 'https://www.youtube.com/channel/UCNbji6N576Y5BnG8VB-mNaA',
             },
           ],
         },
@@ -93,7 +189,7 @@ export default {
     },
     {
       type: 'General',
-      office: 'Governor',
+      office: 'Governor & Lt. Governor',
       level: [
         'administrativeArea1',
       ],
@@ -101,9 +197,9 @@ export default {
         'headOfGovernment',
       ],
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
       sources: [
         {
@@ -113,110 +209,114 @@ export default {
       ],
       candidates: [
         {
-          name: 'Edmund G. "Jerry" Brown',
-          party: 'Democratic',
+          name: 'Bob Beauprez & Jill Repella',
+          party: 'Republican',
+          candidateUrl: 'http://www.bobbeauprez.com',
+          phone: '303-495-3741',
+          email: 'bob@bobbeauprez.com',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/jerrybrown',
+              id: 'https://www.facebook.com/bobbeauprez',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/JerryBrownGov',
+              id: 'https://twitter.com/bobbeauprez',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/user/JerryBrown2010',
+              id: 'https://www.youtube.com/user/bobbeauprez',
             },
           ],
         },
         {
-          name: 'Neel Kashkari',
-          party: 'Republican',
-          candidateUrl: 'http://www.neelkashkari.com/',
+          name: 'John Hickenlooper & Joe Garcia',
+          party: 'Democratic',
+          candidateUrl: 'http://www.hickenlooperforcolorado.com',
+          phone: '720-508-4204',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/neelkashkari',
+              id: 'https://www.facebook.com/Hick2014',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/neelkashkari',
+              id: 'https://twitter.com/Hick2014',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UCGhIiUj05N8mlUNeiKbYfsA',
+              id: 'https://www.youtube.com/user/hickforco',
             },
           ],
+        },
+        {
+          name: 'Harry Hempy & Scott Olson',
+          party: 'Green',
+          candidateUrl: 'http://hempy4governor.org',
+          phone: '303-459-0172',
+          email: 'Hempy4Governor@gmail.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/harry.hempy',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/Hempy4Governor',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/channel/UCcViLVmx2KfEcQBymbg1uyQ',
+            },
+          ],
+        },
+        {
+          name: 'Matthew Hess & Brandon Young',
+          party: 'Libertarian',
+          candidateUrl: 'http://www.matthewhess.org',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/MatthewHessLibertarian',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/mxhess',
+            },
+          ],
+        },
+        {
+          name: 'Mike Dunafon & Robin J. Roberts',
+          party: 'Unaffiliated',
+          candidateUrl: 'http://dunafonforgovernor.com',
+          phone: '(310) 779-6593',
+          email: 'pguthrie@dunafonforgovernor.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/MikeDunafon',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/Dunafon4Gov',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/channel/UCzRO6f5174hMT_Z3nQCpi5g',
+            },
+          ],
+        },
+        {
+          name: 'Paul Noel Fiorino & Charles George Whitley',
+          party: 'Unaffiliated',
+          phone: '303-825-7570',
+          email: 'fiorinoforcolorado@yahoo.com',
         },
       ],
     },
     {
       type: 'General',
-      office: 'Lieutenant Governor',
-      level: [
-        'administrativeArea1',
-      ],
-      roles: [
-        'deputyHeadOfGovernment',
-      ],
-      district: {
-        name: 'California',
-        scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
-      },
-      sources: [
-        {
-          name: 'Ballot Information Project',
-          official: false,
-        },
-      ],
-      candidates: [
-        {
-          name: 'Ron Nehring',
-          party: 'Republican',
-          candidateUrl: 'http://www.ronnehring.com/',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/RonNehringCA',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/RonNehring',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UCFGwCF7iZWLP-j0dFWORvGQ',
-            },
-          ],
-        },
-        {
-          name: 'Gavin Newsom',
-          party: 'Democratic',
-          candidateUrl: 'http://www.gavinnewsom.com/',
-          phone: '(415) 963-9240',
-          email: 'gavin@gavinnewsom.com',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/GavinNewsom',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/GavinNewsom',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/user/NewsomforCalifornia',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: 'General',
-      office: 'Treasurer',
+      office: 'Secretary of State',
       level: [
         'administrativeArea1',
       ],
@@ -224,9 +324,9 @@ export default {
         'governmentOfficer',
       ],
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
       sources: [
         {
@@ -236,43 +336,46 @@ export default {
       ],
       candidates: [
         {
-          name: 'John Chiang',
+          name: 'Amanda Campbell',
+          party: 'American Constitution',
+          candidateUrl: 'http://www.americanconstitutionparty.com/site_flash/images/CampbellforSOS.pdf',
+        },
+        {
+          name: 'Joe Neguse',
           party: 'Democratic',
-          candidateUrl: 'http://www.electjohnchiang.com/',
-          email: 'ElectJohnChiang@gmail.com',
+          candidateUrl: 'http://www.joeneguseforcolorado.com',
+          phone: '(720) 213-8708',
+          email: 'info@joeneguseforcolorado.com',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/22930503694',
+              id: 'https://www.facebook.com/180252152142614',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/johnchiang4ca',
+              id: 'https://twitter.com/joeneguse',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/user/JohnChiang4CA',
+              id: 'https://www.youtube.com/channel/UCNlrvtDEAutYbddVoDgs6eg',
             },
           ],
         },
         {
-          name: 'Greg Conlon',
+          name: 'Wayne W. Williams',
           party: 'Republican',
-          candidateUrl: 'http://www.gregconlon.com/',
-          phone: '916-850-2782',
-          email: 'gregconlonforstatetreasurer@yahoo.com',
+          candidateUrl: 'http://www.winwithwayne.org',
+          phone: '719-271-1228',
+          email: 'wayne@winwithwayne.org',
+        },
+        {
+          name: 'Dave Schambach',
+          party: 'Libertarian',
+          candidateUrl: 'http://www.lp.org/candidates/liberty-candidates-14/david-schambach',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/gregconlonforstatetreasurer',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/GregConlon',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UClllihMKVeAvNVsdYmo-frg',
+              id: 'https://www.facebook.com/dschambach',
             },
           ],
         },
@@ -288,9 +391,9 @@ export default {
         'governmentOfficer',
       ],
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
       sources: [
         {
@@ -300,34 +403,58 @@ export default {
       ],
       candidates: [
         {
-          name: 'Ronald Gold',
-          party: 'Republican',
-          candidateUrl: 'http://www.rongold.org/',
+          name: 'Don Quick',
+          party: 'Democratic',
+          candidateUrl: 'http://www.quickforcolorado.com',
+          email: 'info@quickforcolorado.com',
           channels: [
             {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/140289676146844',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/DQforAG',
+            },
+            {
               type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UC1Od8iX56vySEzXQJ3O8SMw',
+              id: 'https://www.youtube.com/channel/UC9BkehYRMmh2BcsxbSHaU4A',
             },
           ],
         },
         {
-          name: 'Kamala D. Harris',
-          party: 'Democratic',
-          candidateUrl: 'http://kamalaharris.org/',
-          phone: '(415) 364-8784',
-          email: 'info@kamalaharris.org',
+          name: 'Cynthia Coffman',
+          party: 'Republican',
+          candidateUrl: 'http://www.cynthiacoffmanforag.com',
+          phone: '719-422-9424',
+          email: 'info@cynthiacoffmanforag.com',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/KamalaHarris',
+              id: 'https://www.facebook.com/cynthiacoffmanforag',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/KamalaHarris',
+              id: 'https://twitter.com/CynthiaHCoffman',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/user/kamalaharrisdotorg',
+              id: 'https://www.youtube.com/channel/UCvBAry3KQNMH69BwLrvhThQ',
+            },
+          ],
+        },
+        {
+          name: 'David K. Williams',
+          party: 'Libertarian',
+          candidateUrl: 'http://williams4co.com',
+          channels: [
+            {
+              type: 'Facebook',
+              id: 'https://www.facebook.com/williams4co',
+            },
+            {
+              type: 'Twitter',
+              id: 'https://twitter.com/williams4co',
             },
           ],
         },
@@ -335,7 +462,7 @@ export default {
     },
     {
       type: 'General',
-      office: 'Superintendent of Public Instruction',
+      office: 'Treasurer',
       level: [
         'administrativeArea1',
       ],
@@ -343,9 +470,9 @@ export default {
         'governmentOfficer',
       ],
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
       sources: [
         {
@@ -355,225 +482,54 @@ export default {
       ],
       candidates: [
         {
-          name: 'Tom Torlakson',
-          party: 'Nonpartisan',
-          candidateUrl: 'http://www.tomtorlakson.com/',
-          phone: '925-386-6774',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/torlakson',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/TomTorlakson',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/user/tomtorlakson',
-            },
-          ],
-        },
-        {
-          name: 'Marshall Tuck',
-          party: 'Nonpartisan',
-          candidateUrl: 'http://www.marshalltuck.com/',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/TuckforCalifornia',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/MarshallTuck',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UCAd4z6Ea8kBxxI-O0f1SbiA',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: 'General',
-      office: 'Secretary of State',
-      level: [
-        'administrativeArea1',
-      ],
-      roles: [
-        'governmentOfficer',
-      ],
-      district: {
-        name: 'California',
-        scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
-      },
-      sources: [
-        {
-          name: 'Ballot Information Project',
-          official: false,
-        },
-      ],
-      candidates: [
-        {
-          name: 'Alex Padilla',
+          name: 'Betsy Markey',
           party: 'Democratic',
-          candidateUrl: 'http://www.padilla4sofs.com/',
-          phone: '818-253-9140',
+          candidateUrl: 'http://www.betsymarkey.com',
+          phone: '(970) 631-8593',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/senator.padilla',
+              id: 'https://www.facebook.com/BetsyMarkey',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/SenAlexPadilla',
+              id: 'https://twitter.com/BetsyMarkey',
             },
             {
               type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UC8iDXwFo62EvFaNIrQln0vA',
+              id: 'https://www.youtube.com/user/MarkeyForColorado',
             },
           ],
         },
         {
-          name: 'Pete Peterson',
+          name: 'Walker Stapleton',
           party: 'Republican',
-          candidateUrl: 'http://www.petesos.com/',
-          phone: '323-450-7536',
-          email: 'campaign@petesos.com',
+          candidateUrl: 'http://www.stapletonforcolorado.com',
           channels: [
             {
               type: 'Facebook',
-              id: 'https://www.facebook.com/PeteSOS',
+              id: 'https://www.facebook.com/Walker.R.Stapleton',
             },
             {
               type: 'Twitter',
-              id: 'https://twitter.com/Pete4SOS',
+              id: 'https://twitter.com/walkerstapleton',
+            },
+            {
+              type: 'YouTube',
+              id: 'https://www.youtube.com/user/stapletonforcolorado',
             },
           ],
+        },
+        {
+          name: 'David Jurist',
+          party: 'Libertarian',
+          candidateUrl: 'http://www.lp.org/candidates/liberty-candidates-14/david-jurist',
         },
       ],
     },
     {
       type: 'General',
-      office: 'Controller',
-      level: [
-        'administrativeArea1',
-      ],
-      roles: [
-        'governmentOfficer',
-      ],
-      district: {
-        name: 'California',
-        scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
-      },
-      sources: [
-        {
-          name: 'Ballot Information Project',
-          official: false,
-        },
-      ],
-      candidates: [
-        {
-          name: 'Ashley Swearengin',
-          party: 'Republican',
-          candidateUrl: 'http://www.ashleyforca.com/',
-          phone: '(559) 565-5066',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/ashleyswearengin',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/Ashley4CA',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/channel/UC9Tc_GLpw5X7t_gg-Q51eKw',
-            },
-          ],
-        },
-        {
-          name: 'Betty T. Yee',
-          party: 'Democratic',
-          candidateUrl: 'http://bettyyee.com/',
-          phone: '(415) 692-3556',
-          email: 'info@bettyyee.com',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/BettyYee2014',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/bettyyee2014',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: 'General',
-      office: 'Insurance Commissioner',
-      level: [
-        'administrativeArea1',
-      ],
-      roles: [
-        'governmentOfficer',
-      ],
-      district: {
-        name: 'California',
-        scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
-      },
-      sources: [
-        {
-          name: 'Ballot Information Project',
-          official: false,
-        },
-      ],
-      candidates: [
-        {
-          name: 'Ted Gaines',
-          party: 'Republican',
-          candidateUrl: 'http://www.tedgaines.com/',
-          phone: '916-221-5770',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/ted.gaines',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/TedGaines',
-            },
-            {
-              type: 'YouTube',
-              id: 'https://www.youtube.com/user/GainesForIC2014',
-            },
-          ],
-        },
-        {
-          name: 'Dave Jones',
-          party: 'Democratic',
-          candidateUrl: 'http://www.davejones2014.com/',
-          phone: '(916) 349-4236',
-          email: 'TeamDaveJones@gmail.com',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/239029093423',
-            },
-          ],
-        },
-      ],
-    },
-    {
-      type: 'General',
-      office: 'Supreme Court Associate Justice (Retention)',
+      office: 'Justice, Colorado Supreme Court',
       level: [
         'administrativeArea1',
       ],
@@ -581,9 +537,9 @@ export default {
         'highestCourtJudge',
       ],
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
       sources: [
         {
@@ -593,32 +549,28 @@ export default {
       ],
       candidates: [
         {
-          name: 'Goodwin Liu',
+          name: 'Brian D. Boatright',
           party: 'Nonpartisan',
         },
         {
-          name: 'Kathryn Mickle Werdegar',
-          party: 'Nonpartisan',
-        },
-        {
-          name: 'Mariano-Florentino Cuellar',
+          name: 'Monica M. Marquez',
           party: 'Nonpartisan',
         },
       ],
     },
     {
       type: 'General',
-      office: 'State Assembly -  District 6',
+      office: 'Judge, Court of Appeals',
       level: [
         'administrativeArea1',
       ],
       roles: [
-        'legislatorLowerBody',
+        'judge',
       ],
       district: {
-        name: 'California Assembly district 6',
-        scope: 'stateLower',
-        id: 'ocd-division/country:us/state:ca/sldl:6',
+        name: 'Colorado',
+        scope: 'statewide',
+        id: 'ocd-division/country:us/state:co',
       },
       sources: [
         {
@@ -628,37 +580,223 @@ export default {
       ],
       candidates: [
         {
-          name: 'Brian Caples',
-          party: 'Democratic',
-          candidateUrl: 'http://www.briancaplesassembly.com/',
+          name: 'Terry Fox',
+          party: 'Nonpartisan',
         },
         {
-          name: 'Beth B. Gaines',
+          name: 'Alan M. Loeb',
+          party: 'Nonpartisan',
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'County Clerk and Recorder',
+      level: [
+        'administrativeArea2',
+      ],
+      roles: [
+        'governmentOfficer',
+      ],
+      district: {
+        name: 'Summit County',
+        scope: 'countywide',
+        id: 'ocd-division/country:us/state:co/county:summit',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Kathleen Neel',
           party: 'Republican',
-          candidateUrl: 'http://www.bethgaines.com/',
-          channels: [
-            {
-              type: 'Facebook',
-              id: 'https://www.facebook.com/gaines.beth',
-            },
-            {
-              type: 'Twitter',
-              id: 'https://twitter.com/bethgaines_',
-            },
-          ],
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'County Surveyor',
+      level: [
+        'administrativeArea2',
+      ],
+      roles: [
+        'governmentOfficer',
+      ],
+      district: {
+        name: 'Summit County',
+        scope: 'countywide',
+        id: 'ocd-division/country:us/state:co/county:summit',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Gary Wilkinson',
+          party: 'Republican',
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'County Sheriff',
+      level: [
+        'administrativeArea2',
+      ],
+      roles: [
+        'governmentOfficer',
+      ],
+      district: {
+        name: 'Summit County',
+        scope: 'countywide',
+        id: 'ocd-division/country:us/state:co/county:summit',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'John G. Minor',
+          party: 'Republican',
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'County Treasurer',
+      level: [
+        'administrativeArea2',
+      ],
+      roles: [
+        'governmentOfficer',
+      ],
+      district: {
+        name: 'Summit County',
+        scope: 'countywide',
+        id: 'ocd-division/country:us/state:co/county:summit',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Bill Wallace',
+          party: 'Democratic',
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'County Coroner',
+      level: [
+        'administrativeArea2',
+      ],
+      roles: [
+        'governmentOfficer',
+      ],
+      district: {
+        name: 'Summit County',
+        scope: 'countywide',
+        id: 'ocd-division/country:us/state:co/county:summit',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Regan Wood',
+          party: 'Republican',
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'County Assessor',
+      level: [
+        'administrativeArea2',
+      ],
+      roles: [
+        'governmentOfficer',
+      ],
+      district: {
+        name: 'Summit County',
+        scope: 'countywide',
+        id: 'ocd-division/country:us/state:co/county:summit',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Beverly Breakstone',
+          party: 'Democratic',
+        },
+      ],
+    },
+    {
+      type: 'General',
+      office: 'CU Regent - District 2',
+      level: [
+        'special',
+      ],
+      roles: [
+        'schoolBoard',
+      ],
+      district: {
+        name: "Colorado's 2nd congressional district",
+        scope: 'congressional',
+        id: 'ocd-division/country:us/state:co/cd:2',
+      },
+      sources: [
+        {
+          name: 'Ballot Information Project',
+          official: false,
+        },
+      ],
+      candidates: [
+        {
+          name: 'Linda Shoemaker',
+          party: 'Democratic',
+          candidateUrl: 'http://www.shoemakerforcu.com',
+        },
+        {
+          name: 'Kim McGahey',
+          party: 'Republican',
+        },
+        {
+          name: 'Daniel Ong',
+          party: 'Libertarian',
+          candidateUrl: 'http://www.ongforcuregent.com',
         },
       ],
     },
     {
       type: 'Referendum',
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
-      referendumTitle: 'Proposition 1',
-      referendumSubtitle: 'Water Bond. Funding for Water Quality, Supply, Treatment, and Storage Projects.',
-      referendumUrl: 'http://vig.cdn.sos.ca.gov/2014/general/en/pdf/proposition-1-title-summary-analysis-v2.pdf',
+      referendumTitle: 'Amendment 67',
+      referendumUrl: 'http://www.sos.state.co.us/pubs/elections/Initiatives/ballotContactList.html',
       sources: [
         {
           name: 'Ballot Information Project',
@@ -669,13 +807,12 @@ export default {
     {
       type: 'Referendum',
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
-      referendumTitle: 'Proposition 2',
-      referendumSubtitle: 'State Budget. Budget Stabilization Account. Legislative Constitutional Amendment.',
-      referendumUrl: 'http://vig.cdn.sos.ca.gov/2014/general/en/pdf/proposition-2-title-summary-analysis.pdf',
+      referendumTitle: 'Amendment 68',
+      referendumUrl: 'http://www.sos.state.co.us/pubs/elections/Initiatives/ballotContactList.html',
       sources: [
         {
           name: 'Ballot Information Project',
@@ -686,13 +823,12 @@ export default {
     {
       type: 'Referendum',
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
-      referendumTitle: 'Proposition 45',
-      referendumSubtitle: 'Healthcare Insurance. Rate Changes. Initiative Statute.',
-      referendumUrl: 'http://vig.cdn.sos.ca.gov/2014/general/en/pdf/proposition-45-title-summary-analysis.pdf',
+      referendumTitle: 'Proposition 104',
+      referendumUrl: 'http://www.sos.state.co.us/pubs/elections/Initiatives/ballotContactList.html',
       sources: [
         {
           name: 'Ballot Information Project',
@@ -703,47 +839,12 @@ export default {
     {
       type: 'Referendum',
       district: {
-        name: 'California',
+        name: 'Colorado',
         scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
+        id: 'ocd-division/country:us/state:co',
       },
-      referendumTitle: 'Proposition 46',
-      referendumSubtitle: 'Drug and Alcohol Testing of Doctors. Medical Negligence Lawsuits. Initiative Statute.',
-      referendumUrl: 'http://vig.cdn.sos.ca.gov/2014/general/en/pdf/proposition-46-title-summary-analysis.pdf',
-      sources: [
-        {
-          name: 'Ballot Information Project',
-          official: false,
-        },
-      ],
-    },
-    {
-      type: 'Referendum',
-      district: {
-        name: 'California',
-        scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
-      },
-      referendumTitle: 'Proposition 47',
-      referendumSubtitle: 'Criminal Sentences. Misdemeanor Penalties. Initiative Statute.',
-      referendumUrl: 'http://vig.cdn.sos.ca.gov/2014/general/en/pdf/proposition-47-title-summary-analysis.pdf',
-      sources: [
-        {
-          name: 'Ballot Information Project',
-          official: false,
-        },
-      ],
-    },
-    {
-      type: 'Referendum',
-      district: {
-        name: 'California',
-        scope: 'statewide',
-        id: 'ocd-division/country:us/state:ca',
-      },
-      referendumTitle: 'Proposition 48',
-      referendumSubtitle: 'Indian Gaming Compacts. Referendum.',
-      referendumUrl: 'http://vig.cdn.sos.ca.gov/2014/general/en/pdf/proposition-48-title-summary-analysis.pdf',
+      referendumTitle: 'Proposition 105',
+      referendumUrl: 'http://www.sos.state.co.us/pubs/elections/Initiatives/ballotContactList.html',
       sources: [
         {
           name: 'Ballot Information Project',
@@ -754,45 +855,21 @@ export default {
   ],
   state: [
     {
-      name: 'California',
+      name: 'Colorado',
       electionAdministrationBody: {
         name: 'Secretary of State',
-        electionInfoUrl: 'http://www.sos.ca.gov/elections/',
-        electionRegistrationUrl: 'https://registertovote.ca.gov/?t=s',
-        electionRegistrationConfirmationUrl: 'https://voterstatus.sos.ca.gov',
-        absenteeVotingInfoUrl: 'https://elections.cdn.sos.ca.gov/vote-by-mail/pdf/vote-by-mail-application.pdf',
-        votingLocationFinderUrl: 'https://voterstatus.sos.ca.gov',
-        ballotInfoUrl: 'https://www.sos.ca.gov/elections/ballot-status/wheres-my-ballot/',
+        electionInfoUrl: 'https://www.sos.state.co.us/pubs/elections/',
+        electionRegistrationUrl: 'https://www.sos.state.co.us/voter/pages/pub/olvr/verifyNewVoter.xhtml',
+        electionRegistrationConfirmationUrl: 'https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml',
+        absenteeVotingInfoUrl: 'https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml',
+        votingLocationFinderUrl: 'https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml',
+        ballotInfoUrl: 'https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml',
         correspondenceAddress: {
-          line1: '1500 11th Street, 5th Floor',
-          city: 'Sacramento',
-          state: 'California',
-          zip: '95814',
+          line1: '1700 Broadway, Suite 200',
+          city: 'Denver',
+          state: 'Colorado',
+          zip: '80290',
         },
-      },
-      local_jurisdiction: {
-        name: 'Sacramento County',
-        electionAdministrationBody: {
-          electionInfoUrl: 'http://www.elections.saccounty.net/pages/default.aspx',
-          physicalAddress: {
-            line1: '7000 65TH ST STE A',
-            city: 'SACRAMENTO',
-            state: 'CA',
-            zip: '95823',
-          },
-          electionOfficials: [
-            {
-              officePhoneNumber: '(916) 875-6451',
-              emailAddress: 'voterinfo@saccounty.net',
-            },
-          ],
-        },
-        sources: [
-          {
-            name: 'DemocracyWorks',
-            official: false,
-          },
-        ],
       },
       sources: [
         {
