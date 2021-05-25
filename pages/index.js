@@ -1,14 +1,8 @@
 import Head from 'next/head';
 import React from 'react';
-// import Link from 'next/link';
-import { signIn, signOut, useSession} from 'next-auth/client';
 
 export default function Home() {
-  const [session, loading] = useSession();
-  const handleSignIn = (e) => {
-    signIn('facebook')
-    console.log(window.location, 'window')
-  }
+
   return (
     <div>
       <Head>
@@ -17,13 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-        {
-        !session 
-        ?
-        <button onClick={handleSignIn}>Sign In</button>
-        :
-        <button onClick={() => signOut({ callbackUrl: 'http://localhost:3000/'})}>Sign Out</button>
-        }
+
       </main>
     </div>
   )
