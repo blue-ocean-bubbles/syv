@@ -13,6 +13,13 @@ module.exports = {
     maxWidth: {
       '1/6': '16.6666667%',
     },
+    backgroundSize: {
+      auto: 'auto',
+      cover: 'cover',
+      contain: 'contain',
+      '50%': '50%',
+      16: '4rem',
+    },
   },
   variants: {
     extend: {
