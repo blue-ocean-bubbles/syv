@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@badrap/bar-of-progress": "^0.1.2",
     "autoprefixer": "^10.2.5",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
