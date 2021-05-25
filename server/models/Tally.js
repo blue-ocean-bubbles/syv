@@ -1,10 +1,12 @@
 import mongoose from 'mongoose';
-// import bcrypt from 'bcrypt';
+
+mongoose.models = {};
 
 const tallySchema = new mongoose.Schema({
   name: String,
   district: String,
   contest: String,
+  count: { type: Number, default: 1 },
 });
 
 const Tally = mongoose.model('Tally', tallySchema);
