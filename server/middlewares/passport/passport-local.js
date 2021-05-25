@@ -1,21 +1,8 @@
+/* eslint-disable */
 import passport from 'passport';
 import bcrypt from 'bcrypt';
 import { Strategy as LocalStrategy } from 'passport-local';
 import User from '../../models/User';
-
-passport.serializeUser((user, done) => {
-  done(null, user._id.toString());
-});
-
-passport.deserializeUser((req, id, done) => {
-  // find the user
-  User.findOne({_id: id}, (err, user) => {
-    if (err) {
-      return err;
-    }
-    done(null, user)
-  });
-});
 
 passport.use(
   new LocalStrategy(
@@ -34,5 +21,21 @@ passport.use(
     },
   ),
 );
+
+// Serialize users based off ids for sessions
+passport.serializeUser((user, done) => {
+  done(null, user._id.toString());
+});
+
+// Log out users
+passport.deserializeUser((req, id, done) => {
+  User.findOne({ _id: id }, (err, user) => {
+    console.log(user)
+    if (err) {
+      return err;
+    }
+    done(null, user);
+  });
+});
 
 export default passport;

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import nextConnect from 'next-connect';
 import database from './database';
 import session from './session';

@@ -6,20 +6,9 @@ import passport from '../../../server/middlewares/passport/passport-google.js'
 const handler = nextConnect();
 handler.use(middleware);
 
-console.log(passport);
-
-handler.get(passport.authenticate('google', { scope: ['profile', 'email']}), (req, res, next) => {
+handler.get(passport.authenticate('google', { scope: ['profile', 'email'], session:true }), (req, res, next) => {
   // return our user object
-  console.log(req.user);
-
-  res.json({ message:'Logged in successfully' });
-});
-
-handler.get(passport.authenticate('google', { scope: ['profile', 'email']}), (req, res, next) => {
-  // return our user object
-  console.log(req.user);
-
-  res.json({ message:'Logged in successfully' });
+  res.json({ message:'Logged in successfully with google', user: req.user });
 });
 
 export default handler;
