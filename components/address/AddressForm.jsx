@@ -9,7 +9,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Confetti from 'react-confetti';
-// eslint-disable-next-line import/no-unresolved
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import AddressSuggest from './AddressSuggest';
@@ -187,7 +186,7 @@ class AddressForm extends Component {
     const co = this.state.address;
     const pos = co.postalCode.split('-')[0];
 
-    const width = 1500;
+    const width = 3000;
     const height = 1100;
 
     if (co.state === 'Colorado' || (pos >= '80001' && pos <= '81658') || co.postalCode === 'CO') {

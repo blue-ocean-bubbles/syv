@@ -11,6 +11,7 @@ import React, { Component } from 'react';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import styles from '../styles/Home.module.css';
+import Background from '../components/background';
 
 class CompleteSignUp extends React.Component {
   constructor(props) {
@@ -127,22 +128,25 @@ class CompleteSignUp extends React.Component {
     return (
       <div>
         <Navbar />
-        <form className={styles.container} name="contactform" onSubmit={this.contactSubmit}>
-          <div className="col-md-6">
-            <fieldset>
-              <input className={styles.links} refs="email" type="text" size="30" placeholder="Email" onChange={this.handleChange.bind(this, 'email')} value={this.state.fields.email || ''} />
-              <br />
-              <span style={{ color: 'red' }}>{this.state.errors.email}</span>
-              <br />
-              <input className={styles.links} refs="password" type="text" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
-              <br />
-              <span style={{ color: 'red' }}>{this.state.errors.password}</span>
-              <br />
-              <br />
-              <button onClick={this.contactSubmit} style={{ fontSize: '25px' }}>Submit Email and New Password</button>
-            </fieldset>
-          </div>
-        </form>
+        <Background />
+        <div className={styles.container}>
+          <form className={styles.container} style={{ zIndex: '50' }} name="contactform" onSubmit={this.contactSubmit}>
+            <div className="col-md-6">
+              <fieldset>
+                <input className={styles.links} refs="email" type="text" size="30" placeholder="Email" onChange={this.handleChange.bind(this, 'email')} value={this.state.fields.email || ''} />
+                <br />
+                <span style={{ color: 'red' }}>{this.state.errors.email}</span>
+                <br />
+                <input className={styles.links} refs="password" type="text" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
+                <br />
+                <span style={{ color: 'red' }}>{this.state.errors.password}</span>
+                <br />
+                <br />
+                <button onClick={this.contactSubmit} style={{ fontSize: '25px' }}>Submit Email and New Password</button>
+              </fieldset>
+            </div>
+          </form>
+        </div>
         <Footer />
       </div>
     );
