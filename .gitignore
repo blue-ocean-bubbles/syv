@@ -107,3 +107,4 @@ dist
 # Pem files
 *.pem
 config.js
+env.local

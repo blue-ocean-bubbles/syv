@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
+import Background from '../components/background';
 
 export default function Home() {
   return (
@@ -15,15 +15,7 @@ export default function Home() {
       </Head>
       <main className="relative">
         <Navbar />
-        <div className=" absolute top-0 h-full w-full " style={{ zIndex: '50' }}>
-          <h1 className={styles.title} style={{ zIndex: '50', paddingTop: '150px' }}>
-            Welcome to Secure Your Vote
-          </h1>
-          <div className="absolute inline-block top-0 bg-gradient-to-r from-blue-900 via-blue-900 to-transparent" style={{ height: '500px', width: '100vw', zIndex: '-1' }}>
-
-            <Image className="bg-center filter h-full relative opacity-60 contrast-120 brightness-40" style={{ zIndex: '-1' }} src="https://vote411-prod.s3.amazonaws.com/s3fs-public/2019-07/HomepageHero_blurred_lowres.jpg" alt="background" layout="fill" objectFit="cover" objectPosition="top center" />
-          </div>
-        </div>
+        <Background />
         <div className={styles.container}>
 
           <div className={styles.grid} style={{ zIndex: '50' }}>
@@ -31,7 +23,7 @@ export default function Home() {
               <h2>Register To Vote &rarr;</h2>
             </a>
 
-            <a href="http://localhost:3000/dashboard" className={styles.card}>
+            <a className={styles.card} href="/dashboard">
               <h2>Whats on your ballot &rarr;</h2>
             </a>
 
