@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Confetti from 'react-confetti';
 import Dashboard from '../../components/dashboard';
-import dummyData from './ballotDummyData';
+import dummyData from '../../samples/ballotDummyData.jsx';
 
-export default function Ballot() {
+function Ballot() {
+  const height = 1100;
+  const width = 3000;
+  const [isSubmitted, changeSubmit] = useState(false);
   const [ballot, setBallot] = useState({});
 
   const handleCheck = (office, input, multipleAllowed = true, maxVotes = 3) => {
@@ -20,7 +24,7 @@ export default function Ballot() {
 
   const handleUncheck = (office, input) => {
     const newBallot = JSON.parse(JSON.stringify(ballot));
-    if (newBallot[office].check.includes(input)) {
+    if (newBallot[office].check?.includes(input)) {
       const index = newBallot[office].check.indexOf(input);
       newBallot[office].check.splice(index, 1);
     }
@@ -37,11 +41,29 @@ export default function Ballot() {
     setBallot(newBallot);
   };
 
+  // const alert = () => (<div style={{ zIndex: '50' }} role="alert"><Confetti width={1000} height={1000} /></div>);
+  // useEffect(() => );
+
   const handleSubmit = () => {
-    axios.post('/api/ballot', ballot)
-      .then((response) => {
-        console.log('response', response);
-      });
+    changeSubmit(true);
+    const ballotArr = [];
+    setTimeout(() => {
+      changeSubmit(false);
+    }, 8000);
+
+    // for (const key in ballot) {
+    //   const ballotObj = {};
+    //   if (ballot[key].writeIn !== undefined) {
+    //     ballotObj.name = ballot[key]
+    //   }
+    // }
+
+    // axios.post('/api/ballot', ballot)
+    //   .then((response) => {
+    //     console.log('response', response);
+    //   });
+    // console.log('ballot', ballotArr);
+    // return (<Confetti width={width} height={height} />)
   };
 
   return (
@@ -58,7 +80,7 @@ export default function Ballot() {
         </div>
 
         <div className="bg-gray-100 grid grid-cols-3 gap-x-5 gap-y-5 h-full p-5">
-          {dummyData.contests.map((contest, j) => (
+          {dummyData.contests.filter((contest) => contest.type === 'General').map((contest, j) => (
             <div key={j}>
               <h1 className="font-bold">{contest.office}</h1>
               <div>
@@ -81,8 +103,16 @@ export default function Ballot() {
               </div>
             </div>
           ))}
-
-          <button onClick={() => handleSubmit()}>Submit</button>
+          <br />
+          <button type="button" onClick={handleSubmit}>Submit</button>
+          {isSubmitted
+            ? (
+              <Confetti
+                width={document.documentElement.scrollWidth}
+                height={document.documentElement.scrollHeight}
+              />
+            )
+            : null}
 
         </div>
       </>
@@ -90,3 +120,5 @@ export default function Ballot() {
 
   );
 }
+
+export default Ballot;
