@@ -186,9 +186,6 @@ class AddressForm extends Component {
     const co = this.state.address;
     const pos = co.postalCode.split('-')[0];
 
-    const width = 3000;
-    const height = 1100;
-
     if (co.state === 'Colorado' || (pos >= '80001' && pos <= '81658') || co.postalCode === 'CO') {
       isValid = true;
       return (
@@ -201,8 +198,8 @@ class AddressForm extends Component {
           {this.state.coords.lon}
           .
           <Confetti
-            width={width}
-            height={height}
+            width={document.documentElement.scrollWidth}
+            height={document.documentElement.scrollHeight}
           />
         </div>
       );
