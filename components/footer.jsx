@@ -1,9 +1,10 @@
-import Image from 'next/image'
+/* eslint-disable react/jsx-indent */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/react-in-jsx-scope */
+import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 
-
-const Footer = () => {
-  return (
+const Footer = () => (
     <div>
       <footer className={styles.footer}>
         <a
@@ -18,7 +19,6 @@ const Footer = () => {
         </a>
       </footer>
     </div>
-  )
-}
+);
 
 export default Footer;

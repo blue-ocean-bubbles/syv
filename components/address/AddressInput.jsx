@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import AddressItem from './AddressItem';
 
@@ -20,8 +22,8 @@ class AddressInput extends Component {
           <AddressItem label="State" id="state" value={this.props.state} onChange={this.handleChange} placeholder="" />
           <AddressItem label="Postal Code" id="postalCode" value={this.props.postalCode} onChange={this.handleChange} placeholder="" />
           <AddressItem label="Country" id="country" value={this.props.country} onChange={this.handleChange} placeholder="" />
+        </div>
       </div>
-    </div>
     );
   }
 }
