@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-sequences */
 /* eslint-disable no-unused-vars */
@@ -9,6 +10,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Confetti from 'react-confetti';
 // eslint-disable-next-line import/no-unresolved
+import Link from 'next/link';
+import { withRouter } from 'next/router';
 import AddressSuggest from './AddressSuggest';
 import AddressInput from './AddressInput';
 import styles from '../../styles/Home.module.css';
@@ -162,7 +165,8 @@ class AddressForm extends Component {
     evt.preventDefault();
     // Save address information to database and advance user to
     // entering email address and pick password complete signup
-    this.setState(this.getInitialState());
+    // this.setState(this.getInitialState());
+    this.props.router.push('/complete-sign-up');
   }
 
   alert() {
@@ -244,4 +248,4 @@ class AddressForm extends Component {
   }
 }
 
-export default AddressForm;
+export default withRouter(AddressForm);
