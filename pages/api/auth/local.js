@@ -8,8 +8,8 @@ handler.use(middleware);
 // POST /api/auth/local
 handler.post(passport.authenticate('local'), (req, res) => {
   // return our user object
-  delete req.user.password;
-  res.json({ message: 'Logged in successfully locally', user: req.user });
+  console.log(req.session, 'INSIDE LOCAL');
+  res.redirect('/dashboard').json({ message: 'Logged in successfully locally' });
 });
 
 export default handler;
