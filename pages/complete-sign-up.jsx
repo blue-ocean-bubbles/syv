@@ -137,12 +137,12 @@ class CompleteSignUp extends React.Component {
                 <br />
                 <span style={{ color: 'red' }}>{this.state.errors.email}</span>
                 <br />
-                <input className={styles.links} refs="password" type="text" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
+                <input className={styles.links} refs="password" type="password" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
                 <br />
                 <span style={{ color: 'red' }}>{this.state.errors.password}</span>
                 <br />
                 <br />
-                <button onClick={this.contactSubmit} style={{ fontSize: '25px' }}>Submit Email and New Password</button>
+                <input type="submit" value="Submit Email & New Password" className={styles.links} onClick={this.contactSubmit} />
               </fieldset>
             </div>
           </form>
