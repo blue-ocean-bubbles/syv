@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import axios from 'axios';
+
 import AppBar from '../appbar';
 
 export default function Dashboard({ children }) {
