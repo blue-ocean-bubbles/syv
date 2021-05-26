@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Confetti from 'react-confetti';
 import Dashboard from '../../components/dashboard';
-import dummyData from '../../samples/ballotDummyData.jsx';
+import dummyData from '../../samples/ballotDummyData';
+import BallotAnimation from '../../components/dashboard/ballotAnimation';
 
 function Ballot() {
   const height = 1100;
@@ -49,7 +50,7 @@ function Ballot() {
     const ballotArr = [];
     setTimeout(() => {
       changeSubmit(false);
-    }, 8000);
+    }, 10000);
 
     // for (const key in ballot) {
     //   const ballotObj = {};
@@ -113,6 +114,13 @@ function Ballot() {
               />
             )
             : null}
+          {isSubmitted
+            ? (
+              <BallotAnimation />
+
+            )
+            : null}
+
 
         </div>
       </>
