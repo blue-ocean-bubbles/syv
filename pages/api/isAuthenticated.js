@@ -12,10 +12,10 @@ handler.get((req, res) => {
   try {
     // check to see if user is logged in
     if (req.user) {
-      res.json({ message: 'Secret information' });
+      res.json({ isLoggedIn: true });
     } else {
       // if not, return unauthorized error
-      res.status(401).json({ message: 'Unauthorized.' });
+      res.status(401).json({ isLoggedIn: false });
     }
   } catch (err) {
     console.log(err);
