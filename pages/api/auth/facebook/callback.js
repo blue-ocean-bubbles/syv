@@ -8,7 +8,7 @@ handler.use(middleware);
 handler.get(passport.authenticate('facebook', { session: true }), (req, res, next) => {
   // return our user object
   console.log(req.session,'INSIDE FB CALLBACK');
-  res.json({ message:'Logged in successfully with FB' });
+  res.redirect('/dashboard').json({ message:'Logged in successfully with Facebook' });
 });
 
 

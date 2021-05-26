@@ -7,8 +7,8 @@ handler.use(middleware);
 
 handler.get(passport.authenticate('google', { session: true }), (req, res, next) => {
   // return our user object
-  console.log(req.session,'INSIDE GOOGLE CALLBACK');
-  res.json({ message:'Logged in successfully with Google' });
+  console.log(req.session, 'INSIDE GOOGLE CALLBACK');
+  res.redirect('/dashboard').json({ message: 'Logged in successfully with Google' });
 });
 
 
