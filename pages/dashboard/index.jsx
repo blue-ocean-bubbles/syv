@@ -3,27 +3,29 @@
 import React from 'react';
 import axios from 'axios';
 
+import { UserContext } from '../../state/user-context';
+
 import Dashboard from '../../components/dashboard';
 import ElectionCard from '../../components/dashboard/election-card';
 
 import voterInfoData from '../../samples/voterInfoQuery';
 
 export default function DashboardHome(props) {
-  // console.log(props)
   return (
     <Dashboard>
-      <div className="flex flex-col h-full">
-        <div className="text-4xl pl-8 pt-8 text-gray-800 font-bold">
-          Your Upcoming Elections
+      <UserContext.Provider value={props.user}>
+        <div className="flex flex-col h-full">
+          <div className="text-4xl pl-8 pt-8 text-gray-800 font-bold">
+            Your Upcoming Elections
+          </div>
+          <div className="text-2xl pl-8 text-gray-500 font-light">
+            View voting, election, and representative information based on your location
+          </div>
+          <div className="shadow-xl m-8 mt-8 flex-grow rounded-xl">
+            <ElectionCard election={props.voterInfo} user={props.userAddress} />
+          </div>
         </div>
-        <div className="text-2xl pl-8 text-gray-500 font-light">
-          View voting, election, and representative information based on your location
-        </div>
-        <div className="shadow-xl m-8 mt-8 flex-grow rounded-xl">
-          <ElectionCard election={props.voterInfo} />
-        </div>
-      </div>
-
+      </UserContext.Provider>
     </Dashboard>
   );
 }
@@ -39,7 +41,14 @@ export async function getServerSideProps(context) {
 
     // console.log(res, isLoggedIn);
     if (isLoggedIn) {
-      return { props: { voterInfo } };
+      return {
+        props: {
+          voterInfo,
+          user: {
+            address: '7700 Juan Way, Fair Oaks, CA, 95628',
+          },
+        },
+      };
     }
   } catch (err) {
     return {

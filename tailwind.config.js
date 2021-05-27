@@ -6,19 +6,24 @@ module.exports = {
       transitionProperty: {
         height: 'height',
       },
-    },
-    minWidth: {
-      '1/6': '16.6666667%',
-    },
-    maxWidth: {
-      '1/6': '16.6666667%',
-    },
-    backgroundSize: {
-      auto: 'auto',
-      cover: 'cover',
-      contain: 'contain',
-      '50%': '50%',
-      16: '4rem',
+      width: {
+        'half-screen': '50vw',
+      },
+      minWidth: {
+        '1/6': '16.6666667%',
+        'half-screen': '50vw',
+      },
+      maxWidth: {
+        '1/6': '16.6666667%',
+        'half-screen': '50vw',
+      },
+      backgroundSize: {
+        auto: 'auto',
+        cover: 'cover',
+        contain: 'contain',
+        '50%': '50%',
+        16: '4rem',
+      },
     },
   },
   variants: {

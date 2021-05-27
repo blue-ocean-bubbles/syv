@@ -26,7 +26,7 @@ const ReferendumContestCard = ({ contest }) => (
     </div>
     <div className="mt-auto px-4 py-2 bg-gray-200 rounded-b-md group-hover:bg-gray-600 group-hover:text-white flex flex-row items-center gap-2 justify-center">
       {informationIcon}
-      {`Source: ${contest.sources[0].name}, ${cdcl(contest.sources[0].official, 'Offical', 'Unofficial')}`}
+      {`Source: ${contest.sources[0].name}, ${cdcl(contest.sources[0].official, 'Official', 'Unofficial')}`}
     </div>
   </div>
 );
