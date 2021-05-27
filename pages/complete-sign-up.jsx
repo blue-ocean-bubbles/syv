@@ -8,6 +8,9 @@
 /* eslint-disable eol-last */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
+import axios from 'axios';
+
+// components
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import styles from '../styles/Home.module.css';
@@ -30,17 +33,22 @@ class CompleteSignUp extends React.Component {
     this.setState({ fields });
   }
 
-  contactSubmit(e) {
-    e.preventDefault();
-    if (this.handleValidation()) {
-      alert('Form submitted');
-
-      this.setState({
-        fields: {},
-        errors: {},
-      });
-    } else {
-      alert('Form has errors.');
+  async contactSubmit(e) {
+    try {
+      e.preventDefault();
+      if (this.handleValidation()) {
+        const submit = await axios.post('/api/users', this.state.fields);
+        if(submit.status === 201) {
+          this.setState({
+            fields: {},
+            errors: {},
+          });
+        }
+      } else {
+        alert('Form has errors.');
+      }
+    } catch(err) {
+      console.log(err)
     }
   }
 
@@ -124,7 +132,15 @@ class CompleteSignUp extends React.Component {
     return null;
   }
 
+  async signUpFacebook() {
+    axios.get('/api/auth/facebook')
+  }
+  async signUpGoogle() {
+    axios.get('/api/auth/google')
+  }
+
   render() {
+    console.log(this.state.fields)
     return (
       <div>
         <Navbar />
@@ -133,6 +149,10 @@ class CompleteSignUp extends React.Component {
           <form className={styles.container} style={{ zIndex: '50' }} name="contactform" onSubmit={this.contactSubmit}>
             <div className="col-md-6">
               <fieldset>
+                <input className={styles.links} refs="firstName" type="text" size="30" placeholder="First Name" onChange={this.handleChange.bind(this, 'firstName')} value={this.state.fields.firstName || ''} />
+                <br />
+                <input className={styles.links} refs="lastName" type="text" size="30" placeholder="Last Name" onChange={this.handleChange.bind(this, 'lastName')} value={this.state.fields.lastName || ''} />
+                <br />
                 <input className={styles.links} refs="email" type="text" size="30" placeholder="Email" onChange={this.handleChange.bind(this, 'email')} value={this.state.fields.email || ''} />
                 <br />
                 <span style={{ color: 'red' }}>{this.state.errors.email}</span>
@@ -146,6 +166,8 @@ class CompleteSignUp extends React.Component {
               </fieldset>
             </div>
           </form>
+          <a href='/api/auth/facebook' className='facebook'>Facebook</a>
+          <a href='/api/auth/google' className='google'>Google</a>
         </div>
         <Footer />
       </div>
