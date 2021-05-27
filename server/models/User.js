@@ -1,3 +1,4 @@
+/* eslint-disable */
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
@@ -16,11 +17,10 @@ const userSchema = mongoose.Schema({
 });
 
 // custom user method to compare password
-userSchema.methods.comparePassword = (candidatePassword, cb) => {
-  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+userSchema.methods.comparePassword = function (candidatePassword, cb) {
+  bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
-    return undefined;
   });
 };
 
