@@ -166,8 +166,8 @@ class CompleteSignUp extends React.Component {
               </fieldset>
             </div>
           </form>
-          <a href='/api/auth/facebook' className='facebook'>Facebook</a>
-          <a href='/api/auth/google' className='google'>Google</a>
+          <a className={styles.social} href='/api/auth/facebook'>Facebook</a>
+          <a className={styles.social} href='/api/auth/google'>Google</a>
         </div>
         <Footer />
       </div>

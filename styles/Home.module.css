@@ -20,6 +20,20 @@
   margin-bottom: 30px;
 }
 
+.social {
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(70, 80, 148);
+  border-radius: 20px;
+  font-size: 25px;
+  margin-bottom: 30px;
+  width: 250px;
+  text-align: center;
+}
+
 .address {
   color: black;
   margin-top: 100px;
