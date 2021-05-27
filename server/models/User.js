@@ -6,10 +6,12 @@ const userSchema = mongoose.Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String },
-  address: { type: String },
-  city: { type: String },
-  state: { type: String },
-  zipCode: { type: String },
+  address: {
+    street: { type: String },
+    city: { type: String },
+    state: { type: String },
+    zip: { type: Number },
+  },
   hasVoted: { type: Boolean, default: false },
 });
 
