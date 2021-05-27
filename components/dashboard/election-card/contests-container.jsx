@@ -8,8 +8,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import GeneralContestCard from './general-contest-card';
 import ReferendumContestCard from './referendum-contest-card';
+import PollingLocationCard from './polling-location-card';
 
-const ContestsContainer = ({ contests, onCardClick }) => {
+const ContestsContainer = ({ election, onCardClick }) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
@@ -18,30 +19,41 @@ const ContestsContainer = ({ contests, onCardClick }) => {
 
   return (
     <div>
+      {election.contests.find((x) => x.type === 'General') && (
       <Accordion expanded={expanded === 'general'} onChange={handleChange('general')}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <span>General Elections</span>
         </AccordionSummary>
         <AccordionDetails className="flex flex-wrap gap-4">
-          {contests.map((contest) => contest.type === 'General' && <GeneralContestCard contest={contest} key={contest.office} onClick={() => onCardClick(contest)} />)}
+          {election.contests.map((contest) => contest.type === 'General' && <GeneralContestCard contest={contest} key={contest.office} onClick={() => onCardClick(contest)} />)}
         </AccordionDetails>
       </Accordion>
+      )}
+      {election.contests.find((x) => x.type === 'Referendum') && (
       <Accordion expanded={expanded === 'referendums'} onChange={handleChange('referendums')}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <span>Referendums</span>
         </AccordionSummary>
         <AccordionDetails className="flex flex-wrap gap-4">
-          {contests.map((contest) => contest.type === 'Referendum' && <ReferendumContestCard contest={contest} key={contest.referendumTitle} onClick={() => onCardClick(contest)} />)}
+          {election.contests.map((contest) => contest.type === 'Referendum' && <ReferendumContestCard contest={contest} key={contest.referendumTitle} onClick={() => onCardClick(contest)} />)}
         </AccordionDetails>
       </Accordion>
+      )}
+      {election.pollingLocations && (
       <Accordion expanded={expanded === 'polling-locations'} onChange={handleChange('polling-locations')}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <span>Polling Locations</span>
+          <div className="">Polling Locations</div>
         </AccordionSummary>
         <AccordionDetails className="flex flex-wrap gap-4">
-          {contests.map((contest) => contest.type === 'Referendum' && <ReferendumContestCard contest={contest} key={contest.referendumTitle} onClick={() => onCardClick(contest)} />)}
+          {election.pollingLocations.map((pollingLocation) => (
+            <PollingLocationCard
+              pollingLocation={pollingLocation}
+              key={pollingLocation.address.line1}
+            />
+          ))}
         </AccordionDetails>
       </Accordion>
+      )}
     </div>
   );
 };
