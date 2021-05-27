@@ -30,7 +30,6 @@ handler.put(async (req, res) => {
   try {
     // check to see if user is logged in
     if (req.user) {
-      console.log(req.user)
       // get the address from request
       const { state, street, city, zip } = req.body;
       // get the user email
