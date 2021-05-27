@@ -12,9 +12,8 @@ async function database(req, res, next) {
         useFindAndModify: false,
       });
     }
-    console.log('Connected to mongo db.');
   } catch (err) {
-    console.log('Failed connecting to remote mongo db');
+    // console.log('Failed connecting to remote mongo db');
     res.status(500).json({ message: 'Remote mongodb failed to connect.' });
   }
   return next();
