@@ -13,10 +13,11 @@ handler.post(async (req, res) => {
       res.status(401).json({ message: 'Unauthorized' });
       return;
     }
-    const votes = req.body.map((vote) => (
-      Tally.updateOne(vote, { $inc: { count: 1 } }, { upsert: true })
-    ));
-    await Promise.all(votes);
+    console.log(req.user);
+    // const votes = req.body.map((vote) => (
+    //   Tally.updateOne(vote, { $inc: { count: 1 } }, { upsert: true })
+    // ));
+    // await Promise.all(votes);
     res.status(201).json({ message: 'ballot counted' });
   } catch (err) {
     res.status(500).json({ message: 'something went wrong while counting ballot' });
