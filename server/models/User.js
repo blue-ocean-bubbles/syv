@@ -1,4 +1,3 @@
-/* eslint-disable */
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 
@@ -12,7 +11,8 @@ let userSchema = mongoose.Schema({
         city: { type: String },
         state: { type: String },
         zip: { type: Number }
-    }
+    },
+    hasVoted: { type: Boolean, default: false }
 });
 
 // custom user method to compare password
@@ -23,7 +23,7 @@ userSchema.methods.comparePassword = function (candidatePassword, cb) {
     });
 };
 
-let User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 mongoose.models = {};
 

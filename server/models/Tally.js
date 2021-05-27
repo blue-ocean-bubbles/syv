@@ -5,6 +5,7 @@ mongoose.models = {};
 const tallySchema = new mongoose.Schema({
   name: String,
   contest: String,
+  districtId: String,
   count: { type: Number, default: 1 },
 });
 
