@@ -1,12 +1,18 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
+
+import { Drawer } from '@material-ui/core';
+
 import { DateTime } from 'luxon';
 
 import ContestsContainer from './contests-container';
 
 export default function ElectionCard({ election }) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
+
   const getDateObjects = () => {
     const date = DateTime.fromISO(election.election.electionDay);
 
@@ -16,6 +22,11 @@ export default function ElectionCard({ election }) {
         <span className="text-lg bg-clip-text text-transparent bg-gradient-to-br from-indigo-500 to-indigo-600 font-black uppercase">{date.toLocaleString({ month: 'short' })}</span>
       </>
     );
+  };
+
+  const handleCardClick = (card) => {
+    setSelectedCard(card);
+    setDrawerOpen(true);
   };
 
   return (
@@ -30,14 +41,21 @@ export default function ElectionCard({ election }) {
             {`${election.state[0].local_jurisdiction.name}, ${election.state[0].name}`}
           </div>
         </span>
-        <button className="justify-self-end self-center ml-auto btn btn-blue">
-          Vote Here &gt;
+        <button className="justify-self-end self-center ml-auto btn btn-blue flex flex-row gap-2 items-center">
+          Vote Here
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
+            <path fillRule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
+          </svg>
         </button>
       </div>
       <div className="m-4">
-        <ContestsContainer contests={election.contests} />
+        <ContestsContainer contests={election.contests} onCardClick={handleCardClick} />
         <div>Polling Locations</div>
       </div>
+      <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+        <span>{selectedCard.office}</span>
+      </Drawer>
     </div>
   );
 }

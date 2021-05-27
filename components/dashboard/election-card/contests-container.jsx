@@ -3,35 +3,45 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 
-import cdcl from '../../../utils/conditional-classes';
+import { Accordion, AccordionDetails, AccordionSummary } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import GeneralContestCard from './general-contest-card';
 import ReferendumContestCard from './referendum-contest-card';
 
-const ContestsContainer = ({ contests }) => {
-  const [contestsExpanded, setContestsExpanded] = useState(false);
-  const [referendumsExpanded, setReferendumsExpanded] = useState(false);
+const ContestsContainer = ({ contests, onCardClick }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <div>
-      <div className="shadow-md">
-        <div className="p-4 flex justify-between">
-          <span className="text-lg">General Elections</span>
-          <button className="btn-rounded btn-rounded-gray" tabIndex={-1} onClick={() => setContestsExpanded(!contestsExpanded)}>{`${contestsExpanded ? '^' : 'v'}`}</button>
-        </div>
-        <div className={`transition-height mx-4 flex flex-wrap justify-center items-center gap-4 overflow-hidden${cdcl(contestsExpanded, 'p-4 h-full', 'h-0')}`}>
-          {contests.map((contest) => contest.type === 'General' && <GeneralContestCard contest={contest} key={contest.office} />)}
-        </div>
-      </div>
-      <div className="shadow-md">
-        <div className="p-4 flex justify-between">
-          <span className="text-lg">Referendums</span>
-          <button className="btn-rounded btn-rounded-gray" onClick={() => setReferendumsExpanded(!referendumsExpanded)}>{`${referendumsExpanded ? '^' : 'v'}`}</button>
-        </div>
-        <div className={`transition-height mx-4 flex flex-wrap justify-center items-center gap-4 overflow-hidden${cdcl(referendumsExpanded, 'p-4 h-full border-solid border-t-2 border-gray-600', 'h-0')}`}>
-          {contests.map((contest) => contest.type === 'Referendum' && <ReferendumContestCard contest={contest} key={contest.referendumTitle} />)}
-        </div>
-      </div>
+      <Accordion expanded={expanded === 'general'} onChange={handleChange('general')}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <span>General Elections</span>
+        </AccordionSummary>
+        <AccordionDetails className="flex flex-wrap gap-4">
+          {contests.map((contest) => contest.type === 'General' && <GeneralContestCard contest={contest} key={contest.office} onClick={() => onCardClick(contest)} />)}
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'referendums'} onChange={handleChange('referendums')}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <span>Referendums</span>
+        </AccordionSummary>
+        <AccordionDetails className="flex flex-wrap gap-4">
+          {contests.map((contest) => contest.type === 'Referendum' && <ReferendumContestCard contest={contest} key={contest.referendumTitle} onClick={() => onCardClick(contest)} />)}
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'polling-locations'} onChange={handleChange('polling-locations')}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <span>Polling Locations</span>
+        </AccordionSummary>
+        <AccordionDetails className="flex flex-wrap gap-4">
+          {contests.map((contest) => contest.type === 'Referendum' && <ReferendumContestCard contest={contest} key={contest.referendumTitle} onClick={() => onCardClick(contest)} />)}
+        </AccordionDetails>
+      </Accordion>
     </div>
   );
 };
