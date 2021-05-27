@@ -107,7 +107,7 @@ export default function Dashboard({ children }) {
       </Head>
       <AppBar />
       <div className="flex flex-row flex-grow">
-        <div className="w-1/6 min-w-1/6 max-w-1/6 h-full shadow-xl z-1 bg-gradient-to-br from-red-700 to-red-800 flex-grow">
+        <div className="w-1/6 min-w-1/6 max-w-1/6 h-full shadow-xl z-1 bg-gradient-to-br from-purple-700 to-purple-800 flex-grow">
           <nav className="flex flex-col gap-y-4 mt-8">
             {links.map((link) => <React.Fragment key={link.path}>{createLink(link)}</React.Fragment>)}
           </nav>
