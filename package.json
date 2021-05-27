@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test:backend": "jest"
+    "test:backend": "jest",
+    "test-coverage": "DEBUG=true nyc mocha ./test/api.coverage.js --exit --inspect=0.0.0.0:9229 --timeout 120000"
   },
   "jest": {
     "verbose": true
