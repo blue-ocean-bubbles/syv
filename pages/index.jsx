@@ -2,11 +2,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import Navbar from '../components/navbar';
-import Footer from '../components/footer';
 import Link from 'next/link';
+import Navbar from '../components/navbar';
 
 const StyledLink = ({ children, href, type }) => {
   const styles = 'transition text-center flex-1 bg-gray-500 bg-opacity-70 hover:bg-opacity-90 shadow-lg rounded-md text-white flex flex-row gap-4 justify-center items-center cursor-pointer relative group text-2xl font-extralight p-4';
@@ -37,19 +34,20 @@ export default function Home() {
         <title>Secure Your Vote</title>
         <meta name="description" content="Online voting for Colorado" />
         <link rel="icon" href="/favicon.ico" />
-        <script defer src="/your-path-to-fontawesome/js/brands.js" />
-        <script defer src="/your-path-to-fontawesome/js/solid.js" />
       </Head>
 
       <main className="relative h-screen">
         <Navbar bg>
           <div className="flex flex-col mt-12 items-center">
-            <div className="m-20">
+            <div className="mt-20 mb-10">
               <div className="uppercase text-7xl font-black text-white text-center">
                 Election information
               </div>
               <div className="uppercase text-7xl font-black text-yellow-400 text-center">
                 you need
+              </div>
+              <div className="text-3xl text-white text-center mt-8">
+                Voting Online Has Never Been More Secure or Accessible Than With Secure Your Vote
               </div>
             </div>
             <div className="flex flex-row flex-wrap gap-4">
@@ -71,7 +69,6 @@ export default function Home() {
             </div>
           </div>
         </Navbar>
-        <Footer />
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
+// import Footer from '../components/footer';
 import axios from 'axios';
 
 const initialValues = {
@@ -11,7 +11,6 @@ const initialValues = {
 
 const SignIn = () => {
   const [values, setValues] = useState(initialValues);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -22,29 +21,35 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //check values at email
-    //check values at password for validation
+    if (values.email && values.password) {
+      axios.post('/api/auth/local')
+        .then(() => {
+
+        })
+        .catch(() => {
+
+        })
+    }
   }
 
-  const handleValidation = (e) => {
-    //check values at email
-    //check values at password for validation
+  const handleValidation = () => {
+    
   }
 
   return (
-  <div>
+  <div className="flex flex-col h-screen">
     <Navbar>
       <div className="">
         <form className="" style={{ zIndex: '50' }} onSubmit={handleSubmit}>
           <label style={{ fontSize: '25px' }}>
             Email Address:
-          {' '}
+            {' '}
             <br />
             <input type="text" name="email" onChange={handleInputChange} className="" value={values.email}/>
           </label>
           <label style={{ fontSize: '25px' }}>
             Password:
-          {' '}
+            {' '}
             <br />
             <input type="text" name="password" onChange={handleInputChange} className="" value={values.password}/>
           </label>
@@ -52,8 +57,6 @@ const SignIn = () => {
         </form>
       </div>
     </Navbar>
-    <Footer />
-
   </div>
 )
 };
