@@ -119,6 +119,7 @@ class CompleteSignUp extends React.Component {
             fields: {},
             errors: {},
           });
+          this.props.route.push('/sign-in');
         }
       } else {
         // alert('Form has errors.');
