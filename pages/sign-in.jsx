@@ -1,8 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import Navbar from '../components/navbar';
 // import Footer from '../components/footer';
 import axios from 'axios';
+import Link from 'next/link';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import Image from 'next/image';
+import Navbar from '../components/navbar';
+import { useRouter } from 'next/router';
 
 const initialValues = {
   email: '',
@@ -11,6 +15,9 @@ const initialValues = {
 
 const SignIn = () => {
   const [values, setValues] = useState(initialValues);
+  const [showError, toggleShowError] = useState(false);
+  const router = useRouter();
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -19,46 +26,54 @@ const SignIn = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (values.email && values.password) {
-      axios.post('/api/auth/local')
-        .then(() => {
-
-        })
-        .catch(() => {
-
-        })
+    try {
+      if (values.email && values.password) {
+        const response = await axios({
+          url: '/api/auth/local',
+          method: 'POST',
+          data: values,
+        });
+        router.push(response.data.redirect);
+      }
     }
-  }
-
-  const handleValidation = () => {
-    
-  }
+    catch (err) {
+      console.log(err.response);
+      toggleShowError(true);
+    }
+  };
 
   return (
-  <div className="flex flex-col h-screen">
-    <Navbar>
-      <div className="">
-        <form className="" style={{ zIndex: '50' }} onSubmit={handleSubmit}>
-          <label style={{ fontSize: '25px' }}>
-            Email Address:
-            {' '}
-            <br />
-            <input type="text" name="email" onChange={handleInputChange} className="" value={values.email}/>
-          </label>
-          <label style={{ fontSize: '25px' }}>
-            Password:
-            {' '}
-            <br />
-            <input type="text" name="password" onChange={handleInputChange} className="" value={values.password}/>
-          </label>
-          <input type="submit" value="Log-in" className="" />
-        </form>
-      </div>
-    </Navbar>
-  </div>
-)
+    <div className="flex flex-col h-screen">
+      <Navbar>
+        <div className="w-full h-full flex flex-col flex-grow mt-10 w-8/12 mx-auto">
+          <form className="" style={{ zIndex: '50' }} onSubmit={handleSubmit}>
+            <div>
+              <fieldset className="flex flex-col gap-4 w-5/12 mx-auto">
+                <input className="input-custom" name="email" refs="email" type="text" size="30" placeholder="Email" onChange={handleInputChange} value={values.email || ''} />
+                <input className="input-custom" name="password" refs="password" type="password" size="30" placeholder="Password" onChange={handleInputChange} value={values.password || ''} />
+                {showError && <span className="text-red-500">Invalid Credentials</span>}
+                <input type="submit" value="Sign-In" className="btn btn-purple cursor-pointer" onClick={handleSubmit} />
+                <Link href="/api/auth/facebook">
+                  <a className="transition btn text-center bg-blue-600 hover:bg-blue-700 text-white flex flex-row gap-2 justify-center items-center focus:bg-blue-800">
+                    <FacebookIcon />
+                    Login With Facebook
+                  </a>
+                </Link>
+                <Link href="/api/auth/google">
+                  <a className="transition btn text-center gap-2 bg-white hover:bg-red-500 hover:text-white focus:text-white focus:bg-red-600 text-gray-800 h-full w-full flex flex-row justify-center items-center gap-2 group">
+                    <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width={20} height={20} className="transistion-all group-hover:filter group-hover:grayscale group-hover:contrast-max group-hover:brightness-max" />
+                    Login With Google
+                  </a>
+                </Link>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </Navbar>
+    </div>
+  );
 };
 
 export default SignIn;

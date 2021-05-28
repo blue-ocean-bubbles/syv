@@ -124,7 +124,11 @@ class CompleteSignUp extends React.Component {
         // alert('Form has errors.');
       }
     } catch (err) {
-      // console.log(err);
+      this.setState({
+        errors: {
+          email: 'Email already taken',
+        }
+      });
     }
   }
 
@@ -150,6 +154,8 @@ class CompleteSignUp extends React.Component {
                   {this.state.errors.email && <span className="text-red-500">{this.state.errors.email}</span>}
                   <input className="input-custom" refs="password" type="password" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
                   {this.state.errors.password && <span className="text-red-500">{this.state.errors.password}</span>}
+
+                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer" onClick={this.contactSubmit} />
                   <Link href="/api/auth/facebook">
                     <a className="transition btn text-center bg-blue-600 hover:bg-blue-700 text-white flex flex-row gap-2 justify-center items-center focus:bg-blue-800">
                       <FacebookIcon />
@@ -162,7 +168,7 @@ class CompleteSignUp extends React.Component {
                       Login With Google
                     </a>
                   </Link>
-                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer" onClick={this.contactSubmit} />
+
                 </fieldset>
               </div>
             </form>
