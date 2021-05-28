@@ -24,6 +24,9 @@ module.exports = {
         '50%': '50%',
         16: '4rem',
       },
+      contrast: {
+        max: '100',
+      },
     },
   },
   variants: {

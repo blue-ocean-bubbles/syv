@@ -9,6 +9,7 @@ import Dashboard from '../../components/dashboard';
 import ElectionCard from '../../components/dashboard/election-card';
 
 import voterInfoData from '../../samples/voterInfoQuery';
+import voterInfoQuery from '../../samples/voterInfoQuery';
 
 export default function DashboardHome(props) {
   return (
@@ -40,10 +41,8 @@ export async function getServerSideProps(context) {
     let voterInfo;
     if (user.address) {
       const address = `${user.address.street},${user.address.city},${user.address.state},${user.address.zip}`;
-      voterInfo = (await axios.get('https://www.googleapis.com/civicinfo/v2/voterinfo', { params: { key, address, electionId: 2000 } })).data;
-      console.log(voterInfo);
+      voterInfo = voterInfoQuery // (await axios.get('https://www.googleapis.com/civicinfo/v2/voterinfo', { params: { key, address, electionId: 2000 } })).data;
     }
-    // console.log(user);
     return {
       props: {
         voterInfo,
@@ -51,7 +50,6 @@ export async function getServerSideProps(context) {
       },
     };
   } catch (err) {
-    console.log(err);
     return {
       redirect: { destination: '/sign-in', permanent: false },
     };
