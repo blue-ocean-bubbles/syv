@@ -17,11 +17,11 @@ class AddressInput extends Component {
     return (
       <div>
         <div>
-          <AddressItem label="Street" id="street" value={this.props.street} onChange={this.handleChange} placeholder="" />
-          <AddressItem label="City" id="city" value={this.props.city} onChange={this.handleChange} placeholder="" />
-          <AddressItem label="State" id="state" value={this.props.state} onChange={this.handleChange} placeholder="" />
-          <AddressItem label="Postal Code" id="postalCode" value={this.props.postalCode} onChange={this.handleChange} placeholder="" />
-          <AddressItem label="Country" id="country" value={this.props.country} onChange={this.handleChange} placeholder="" />
+          <AddressItem id="street" value={this.props.street} onChange={this.handleChange} placeholder="Street" />
+          <AddressItem id="city" value={this.props.city} onChange={this.handleChange} placeholder="City" />
+          <AddressItem id="state" value={this.props.state} onChange={this.handleChange} placeholder="State" />
+          <AddressItem id="postalCode" value={this.props.postalCode} onChange={this.handleChange} placeholder="Postal Code" />
+          {/* <AddressItem id="country" value={this.props.country} onChange={this.handleChange} placeholder="Country" /> */}
         </div>
       </div>
     );
