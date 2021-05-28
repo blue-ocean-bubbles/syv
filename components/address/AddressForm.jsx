@@ -49,20 +49,20 @@ class AddressForm extends Component {
           maxresults: 1,
         },
       }).then((response) => {
-      if (response.data.items.length > 0) {
-        const { id } = response.data.items[0];
-        const { address } = response.data.items[0];
-        self.setState({
-          address,
-          query,
-          locationId: id,
-          fullAddress: address.label,
-        });
-      } else {
-        const state = self.getInitialState();
-        self.setState(state);
-      }
-    });
+        if (response.data.items.length > 0) {
+          const { id } = response.data.items[0];
+          const { address } = response.data.items[0];
+          self.setState({
+            address,
+            query,
+            locationId: id,
+            fullAddress: address.label,
+          });
+        } else {
+          const state = self.getInitialState();
+          self.setState(state);
+        }
+      });
   }
 
   getInitialState() {
@@ -123,33 +123,33 @@ class AddressForm extends Component {
           maxresults: 1,
         },
       }).then((response) => {
-      const view = response.data.items;
-      if (view.length > 0 && view[0].access.length > 0) {
-        const location = view[0];
+        const view = response.data.items;
+        if (view.length > 0 && view[0].access.length > 0) {
+          const location = view[0];
 
-        self.setState({
-          isChecked: 'true',
-          locationId: '',
-          query: location.address.label,
-          address: {
-            street: `${location.address.houseNumber} ${location.address.street}`,
-            city: location.address.city,
-            state: location.address.state,
-            postalCode: location.address.postalCode,
-            country: location.address.countryName,
-          },
-          coords: {
-            lat: location.access[0].lat,
-            lon: location.access[0].lng,
-          },
-        });
-      } else {
-        self.setState({
-          isChecked: true,
-          coords: null,
-        });
-      }
-    })
+          self.setState({
+            isChecked: 'true',
+            locationId: '',
+            query: location.address.label,
+            address: {
+              street: `${location.address.houseNumber} ${location.address.street}`,
+              city: location.address.city,
+              state: location.address.state,
+              postalCode: location.address.postalCode,
+              country: location.address.countryName,
+            },
+            coords: {
+              lat: location.access[0].lat,
+              lon: location.access[0].lng,
+            },
+          });
+        } else {
+          self.setState({
+            isChecked: true,
+            coords: null,
+          });
+        }
+      })
       .catch((error) => {
         console.log('caught failed query', error);
         self.setState({
@@ -159,13 +159,30 @@ class AddressForm extends Component {
       });
   }
 
-  submitForm(evt) {
-    console.log('Form will be submitted');
+  async submitForm(evt) {
+    const { street, city, state } = this.state.address;
+    let postalCode = this.state.address.postalCode;
+    if (postalCode.includes('-')) {
+      postalCode = postalCode.split('-')[0];
+    }
     evt.preventDefault();
     // Save address information to database and advance user to
     // entering email address and pick password complete signup
-    // this.setState(this.getInitialState());
-    this.props.router.push('/complete-sign-up');
+    const address = {
+      street,
+      city,
+      state,
+      zip: postalCode
+    };
+    const res = await axios({
+      url: '/api/user',
+      method: 'PUT',
+      data: address,
+    });
+    // if updated successfully
+    if (res.status === 204) {
+      this.props.router.push('/dashboard');
+    }
   }
 
   alert() {
@@ -185,18 +202,13 @@ class AddressForm extends Component {
 
     const co = this.state.address;
     const pos = co.postalCode.split('-')[0];
-
-    if (co.state === 'Colorado' || (pos >= '80001' && pos <= '81658') || co.postalCode === 'CO') {
+    console.log(this.state.address);
+    if (co.country === 'United States') {
       isValid = true;
       return (
         <div role="alert">
           <b>Valid Address.</b>
           {' '}
-          Location is
-          {this.state.coords.lat}
-          ,
-          {this.state.coords.lon}
-          .
           <Confetti
             width={document.documentElement.scrollWidth}
             height={document.documentElement.scrollHeight}
@@ -209,37 +221,42 @@ class AddressForm extends Component {
       <div role="alert">
         <b>Invalid.</b>
         {' '}
-        The address must be in Colorado.
+        The address must be within the United States of.
       </div>
     );
   }
 
   render() {
     const result = this.alert();
+    console.log(result)
     return (
-      <div className={styles.container, styles.address}>
-        <AddressSuggest
-          query={this.state.query}
-          onChange={this.onQuery}
-        />
-        <AddressInput
-          street={this.state.address.street}
-          city={this.state.address.city}
-          state={this.state.address.state}
-          postalCode={this.state.address.postalCode}
-          country={this.state.address.country}
-          onChange={this.onAddressChange}
-        />
-        <br />
-        { result || <br />}
-        <button type="submit" onClick={this.onCheck}>Check</button>
-        {' '}
-        |
-        <button type="submit" onClick={this.onClear}>Clear</button>
-        {' '}
-        |
-        { result && isValid ? <button type="submit" onClick={this.submitForm}>Sumbit</button> : null}
-      </div>
+      <div className='w-7/12 mx-auto p-8'>
+        <div className='flex flex-col justify-center items-center'>
+          <h2 className="text-7xl uppercase font-bold text-gray-800">Additional Info</h2>
+          <p className="text-lg font-light text-gray-700 italic">Please register your address with us for the full experience of SYV</p>
+        </div>
+          <AddressSuggest
+            query={this.state.query}
+            onChange={this.onQuery}
+          />
+          <AddressInput
+            street={this.state.address.street}
+            city={this.state.address.city}
+            state={this.state.address.state}
+            postalCode={this.state.address.postalCode}
+            country={this.state.address.country}
+            onChange={this.onAddressChange}
+          />
+          <br />
+          {result || <br />}
+          <button className='btn btn-purple' type="submit" onClick={this.onCheck}>Check</button>
+          {' '}
+
+        <button className='btn btn-purple' type="submit" onClick={this.onClear}>Clear</button>
+          {' '}
+
+        {result && isValid ? <button className='btn btn-purple' type="submit" onClick={this.submitForm}>Sumbit</button> : null}
+        </div>
     );
   }
 }
