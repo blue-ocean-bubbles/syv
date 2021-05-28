@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 /* eslint-disable guard-for-in */
 /* eslint-disable react/jsx-no-undef */
@@ -11,37 +13,25 @@
 /* eslint-disable lines-between-class-members */
 import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
-import axios from 'axios';
-import Footer from '../../components/footer';
+import { withRouter } from 'next/router';
 import Navbar from '../../components/navbar';
 import styles from '../../styles/Home.module.css';
 import data from '../../components/mapData';
 import USAState from '../../components/USAState';
-import civicKey from '../../config';
 
 const dataStates = data();
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.mapHandler = this.mapHandler.bind(this);
+    this.buildPaths = this.buildPaths.bind(this);
+  }
   mapHandler(event) {
     if (event.target) {
       const stateNm = dataStates[event.target.dataset.name].name;
       console.log('Should be fullstate name -->', stateNm);
-      const electionId = 2000;
-      const key = civicKey.CIVIC_API;
-      const address = ` , , ${stateNm} `;
-      axios.get('https://www.googleapis.com/civicinfo/v2/voterinfo', { params: { key, address, electionId } })
-        // .then((response) => {
-        //   console.log('voter info', response.data);
-        //   return {
-        //     props: { response },
-        //     redirect: { destination: `/${stateNm}`, permanent: false },
-        //   };
-        // });
-        .then(() => {
-          return {
-            redirect: { destination: `/${stateNm}`, permanent: false },
-          };
-        });
+      this.props.router.push(`/interactive-map/${stateNm}`);
     }
   }
 
@@ -57,17 +47,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <div className={styles.container}>
-          <USAMap onClick={this.mapHandler} style={{ zIndex: '50' }} defaultFill="rgb(16, 39, 131)" />
-          <g className="outlines">
-            {this.buildPaths()}
-          </g>
-        </div>
-        <Footer />
+        <Navbar>
+          <div className={styles.container}>
+            <USAMap onClick={this.mapHandler} style={{ zIndex: '50' }} defaultFill="rgb(16, 39, 131)" />
+            <g className="outlines">
+              {this.buildPaths()}
+            </g>
+          </div>
+        </Navbar>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
