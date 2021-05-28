@@ -22,7 +22,9 @@ export default function PollingLocationCard({ pollingLocation }) {
   const getDisplayAddress = () => `${pollingLocation.address.line1}, ${pollingLocation.address.city}, ${pollingLocation.address.state}, ${pollingLocation.address.zip}`;
 
   const handleGetAddress = () => {
-    const apiUrl = `https://www.google.com/maps/dir/?api=1&origin=${userContext.address}&destination=${getDisplayAddress()}`;
+    const address = `${userContext.address.street},${userContext.address.city},${userContext.address.state},${userContext.address.zip}`;
+
+    const apiUrl = `https://www.google.com/maps/dir/?api=1&origin=${address}&destination=${getDisplayAddress()}`;
     window.open(apiUrl, '_blank', 'noopener,noreferrer');
   };
 
@@ -32,13 +34,13 @@ export default function PollingLocationCard({ pollingLocation }) {
         <div className="p-2 text-center">
           {getDisplayAddress()}
         </div>
-        <button type="button" className="btn btn-blue align-end flex flex-row items-center justify-center gap-4 flex-grow-0" onClick={handleGetAddress}>
+        <button type="button" className="btn btn-purple align-end flex flex-row items-center justify-center gap-4 flex-grow-0" onClick={handleGetAddress}>
           Get Directions
           {mapIcon}
         </button>
       </div>
 
-      <div className="mt-auto px-4 py-2 bg-gray-200 rounded-b-md group-hover:bg-gray-600 group-hover:text-white flex flex-row items-center gap-2 justify-center">
+      <div className="mt-auto transition px-4 py-2 bg-gray-200 rounded-b-md group-hover:bg-gray-600 group-hover:text-white flex flex-row items-center gap-2 justify-center">
         {informationIcon}
         {`Source: ${pollingLocation.sources[0].name}, ${cdcl(pollingLocation.sources[0].official, 'Official', 'Unofficial')}`}
       </div>

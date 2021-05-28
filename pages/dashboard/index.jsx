@@ -9,6 +9,7 @@ import Dashboard from '../../components/dashboard';
 import ElectionCard from '../../components/dashboard/election-card';
 
 import voterInfoData from '../../samples/voterInfoQuery';
+import voterInfoQuery from '../../samples/voterInfoQuery';
 
 export default function DashboardHome(props) {
   return (
@@ -22,7 +23,7 @@ export default function DashboardHome(props) {
             View voting, election, and representative information based on your location
           </div>
           <div className="shadow-xl m-8 mt-8 flex-grow rounded-xl">
-            <ElectionCard election={props.voterInfo} user={props.userAddress} />
+            <ElectionCard election={props.voterInfo} />
           </div>
         </div>
       </UserContext.Provider>
@@ -32,24 +33,22 @@ export default function DashboardHome(props) {
 
 export async function getServerSideProps(context) {
   const key = process.env.CIVIC_API;
-  const voterInfo = voterInfoData; // (await axios.get('https://www.googleapis.com/civicinfo/v2/elections', { params: { key } })).data;
 
+  const { cookie } = context.req.headers;
   try {
-    const { cookie } = context.req.headers;
-    const res = await axios.get('http://localhost:3000/api/isAuthenticated', { headers: { cookie } });
-    const { isLoggedIn } = res.data;
-
-    // console.log(res, isLoggedIn);
-    if (isLoggedIn) {
-      return {
-        props: {
-          voterInfo,
-          user: {
-            address: '7700 Juan Way, Fair Oaks, CA, 95628',
-          },
-        },
-      };
+    const res = await axios.get('http://localhost:3000/api/user', { headers: { cookie } });
+    const { user } = res.data;
+    let voterInfo;
+    if (user.address) {
+      const address = `${user.address.street},${user.address.city},${user.address.state},${user.address.zip}`;
+      voterInfo = voterInfoQuery // (await axios.get('https://www.googleapis.com/civicinfo/v2/voterinfo', { params: { key, address, electionId: 2000 } })).data;
     }
+    return {
+      props: {
+        voterInfo,
+        user,
+      },
+    };
   } catch (err) {
     return {
       redirect: { destination: '/sign-in', permanent: false },

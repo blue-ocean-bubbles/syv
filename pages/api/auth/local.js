@@ -1,7 +1,7 @@
-/* eslint-disable */
 import nextConnect from 'next-connect';
 import middleware from '../../../server/middlewares';
 import passport from '../../../server/middlewares/passport/passport-local';
+
 const handler = nextConnect();
 handler.use(middleware);
 
@@ -15,7 +15,7 @@ handler.post(passport.authenticate('local'), (req, res) => {
   const zip = user.address.zip || null;
   // check if the google user has an address associated with account
   if(!street || !state || !city || !zip) {
-    res.redirect('/address-form').json({ message: 'Please provide an address' });
+    res.redirect('/address-form');
   } else {
     res.redirect('/dashboard').json({ message: 'Logged in successfully locally' });
   }

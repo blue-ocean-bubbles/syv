@@ -1,5 +1,6 @@
 module.exports = {
   darkMode: false, // or 'media' or 'class',
+  important: true,
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -24,11 +25,21 @@ module.exports = {
         '50%': '50%',
         16: '4rem',
       },
+      contrast: {
+        max: '100',
+      },
+      brightness: {
+        max: '100',
+      },
     },
   },
   variants: {
     extend: {
       backgroundColor: ['active'],
+      filter: ['group-hover'],
+      grayscale: ['group-hover'],
+      contrast: ['group-hover'],
+      brightness: ['group-hover'],
     },
   },
   plugins: [],
