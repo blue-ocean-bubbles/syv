@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test:backend": "jest"
+    "test:backend": "jest",
+    "test-coverage": "DEBUG=true nyc mocha ./test/api.coverage.js --exit --inspect=0.0.0.0:9229 --timeout 120000"
   },
   "jest": {
     "verbose": true
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "autoprefixer": "^10.2.5",

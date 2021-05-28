@@ -15,8 +15,12 @@
   @apply py-2 px-4 font-semibold rounded-lg shadow-md select-none;
 }
 
-.btn-blue {
-  @apply text-white bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-opacity-100 focus:ring-offset-2;
+.btn-purple {
+  @apply transition text-white bg-purple-600 hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-purple-700 focus:ring-opacity-100 focus:ring-offset-2;
+}
+
+.btn-outline {
+  @apply transition text-gray-800 bg-gray-100 hover:bg-purple-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-purple-700 focus:ring-opacity-100 focus:ring-offset-2;
 }
 
 .btn-rounded {
@@ -24,7 +28,7 @@
 }
 
 .btn-rounded-gray {
-  @apply text-gray-600 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-100 focus:ring-offset-2;
+  @apply transition text-gray-600 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-100 focus:ring-offset-2;
 }
 
 path {
@@ -35,3 +39,6 @@ path:hover {
   cursor: pointer;
 }
 
+.input-custom {
+  @apply rounded-md shadow-md p-4 m-2 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent;
+}
