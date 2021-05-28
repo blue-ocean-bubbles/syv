@@ -39,14 +39,14 @@ export default function Home() {
       <main className="relative h-screen">
         <Navbar bg>
           <div className="flex flex-col mt-12 items-center">
-            <div className="m-20">
+            <div className="mt-20 mb-10">
               <div className="uppercase text-7xl font-black text-white text-center">
                 Election information
               </div>
               <div className="uppercase text-7xl font-black text-yellow-400 text-center">
                 you need
               </div>
-              <div>
+              <div className="text-3xl text-white text-center mt-8">
                 Voting Online Has Never Been More Secure or Accessible Than With Secure Your Vote
               </div>
             </div>
