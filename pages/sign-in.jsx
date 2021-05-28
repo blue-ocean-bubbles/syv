@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
 
 const SignIn = () => (
   <div>
@@ -10,13 +9,13 @@ const SignIn = () => (
         <form className="" style={{ zIndex: '50' }}>
           <label style={{ fontSize: '25px' }}>
             Email Address:
-          {' '}
+            {' '}
             <br />
             <input type="text" name="name" className="" />
           </label>
           <label style={{ fontSize: '25px' }}>
             Password:
-          {' '}
+            {' '}
             <br />
             <input type="text" name="name" className="" />
           </label>
@@ -24,8 +23,6 @@ const SignIn = () => (
         </form>
       </div>
     </Navbar>
-    <Footer />
-
   </div>
 );
 
