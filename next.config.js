@@ -4,6 +4,7 @@ module.exports = {
       'vote411-prod.s3.amazonaws.com',
       'www.seoblog.com',
       'www.history.com',
+      'upload.wikimedia.org',
     ],
   },
 };

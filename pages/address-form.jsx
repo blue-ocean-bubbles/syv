@@ -77,7 +77,7 @@ const AddressForm = () => {
               <input name="zip" type="number" onChange={handleChange} className="input-custom w-full" placeholder="Zip Code" />
             </div>
             <div className="w-full">
-              <button onClick={submit} className="btn btn-outline w-full bg-white hover:bg-purple-600  ">Submit</button>
+              <button onClick={submit} className="btn btn-outline w-full bg-white hover:bg-purple-600">Submit</button>
               {errors && errors.main ? <p className="err">{errors.main}</p> : ''}
             </div>
           </div>

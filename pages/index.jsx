@@ -46,6 +46,9 @@ export default function Home() {
               <div className="uppercase text-7xl font-black text-yellow-400 text-center">
                 you need
               </div>
+              <div>
+                Voting Online Has Never Been More Secure or Accessible Than With Secure Your Vote
+              </div>
             </div>
             <div className="flex flex-row flex-wrap gap-4">
               <StyledLink href="https://www.vote.org/register-to-vote/" type="a">
