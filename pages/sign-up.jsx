@@ -151,18 +151,18 @@ class CompleteSignUp extends React.Component {
                   <input className="input-custom" refs="password" type="password" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
                   {this.state.errors.password && <span className="text-red-500">{this.state.errors.password}</span>}
                   <Link href="/api/auth/facebook">
-                    <a className="transition btn text-center bg-blue-600 hover:bg-blue-700 text-white flex flex-row gap-2 justify-center items-center focus:bg-blue-800">
+                    <a className="transition btn text-center bg-blue-600 hover:bg-blue-700 text-white flex flex-row gap-2 justify-center items-center focus:bg-blue-800 p-4">
                       <FacebookIcon />
                       Login With Facebook
                     </a>
                   </Link>
                   <Link href="/api/auth/google">
-                    <a className="transition btn text-center gap-2 bg-white hover:bg-red-500 hover:text-white focus:text-white focus:bg-red-600 text-gray-800 h-full w-full flex flex-row justify-center items-center gap-2 group">
+                    <a className="transition btn text-center gap-2 bg-white hover:bg-red-500 hover:text-white focus:text-white focus:bg-red-600 text-gray-800 h-full w-full flex flex-row justify-center items-center gap-2 group p-4">
                       <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width={20} height={20} className="transistion-all group-hover:filter group-hover:grayscale group-hover:contrast-max group-hover:brightness-max" />
                       Login With Google
                     </a>
                   </Link>
-                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer" onClick={this.contactSubmit} />
+                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer p-4" onClick={this.contactSubmit} />
                 </fieldset>
               </div>
             </form>
