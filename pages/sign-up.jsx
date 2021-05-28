@@ -1,13 +1,14 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-plusplus */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'next/router';
+import Link from 'next/link';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 // components
-import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 
 class CompleteSignUp extends React.Component {
@@ -136,33 +137,33 @@ class CompleteSignUp extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="flex flex-col h-screen">
         <Navbar>
-          <div className="w-full h-full flex flex-col flex-grow mt-10">
+          <div className="w-full h-full flex flex-col flex-grow mt-10 w-8/12 mx-auto">
             <form className="" style={{ zIndex: '50' }} name="contactform" onSubmit={this.contactSubmit}>
               <div className="">
-                <fieldset className="flex flex-col gap-4 w-3/6 mx-auto">
+                <fieldset className="flex flex-col gap-4 w-5/12 mx-auto">
                   <input className="input-custom" refs="firstName" type="text" size="30" placeholder="First Name" onChange={this.handleChange.bind(this, 'firstName')} value={this.state.fields.firstName || ''} />
                   <input className="input-custom" refs="lastName" type="text" size="30" placeholder="Last Name" onChange={this.handleChange.bind(this, 'lastName')} value={this.state.fields.lastName || ''} />
                   <input className="input-custom" refs="email" type="text" size="30" placeholder="Email" onChange={this.handleChange.bind(this, 'email')} value={this.state.fields.email || ''} />
-                  {this.state.errors.email && <span style={{ color: 'red' }}>{this.state.errors.email}</span>}
+                  {this.state.errors.email && <span className="text-red-500">{this.state.errors.email}</span>}
                   <input className="input-custom" refs="password" type="password" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
-                  {this.state.errors.password && <span style={{ color: 'red' }}>{this.state.errors.password}</span>}
-                  <a className="btn text-center bg-blue-700 text-white flex flex-row gap-4 justify-center items-center !p-6" href="/api/auth/facebook">
-                    <FacebookIcon />
-                    Facebook
-                  </a>
-                  <a className="btn text-center" href="/api/auth/google">
-                    <i className="fab fa-google" />
-                    Google
-                  </a>
-                  <input type="submit" value="Sign-Up" className="btn btn-purple" onClick={this.contactSubmit} />
+                  {this.state.errors.password && <span className="text-red-500">{this.state.errors.password}</span>}
+                  <Link href="/api/auth/facebook">
+                    <a className="transition btn text-center bg-blue-600 hover:bg-blue-700 text-white flex flex-row gap-2 justify-center items-center focus:bg-blue-800">
+                      <FacebookIcon />
+                      Login With Facebook
+                    </a>
+                  </Link>
+                  <Link href="/api/auth/google">
+                    <a className="transition btn text-center gap-2 bg-white hover:bg-red-500 hover:text-white focus:text-white focus:bg-red-600 text-gray-800">Login With Google</a>
+                  </Link>
+                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer" onClick={this.contactSubmit} />
                 </fieldset>
               </div>
             </form>
           </div>
         </Navbar>
-        <Footer />
       </div>
     );
   }

@@ -1,9 +1,9 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable no-restricted-syntax */
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import Navbar from '../components/navbar';
-import Footer from '../components/footer';
 
 const AddressForm = () => {
   const [values, setValues] = useState({});
@@ -46,49 +46,44 @@ const AddressForm = () => {
     }
   };
   return (
-    <>
-      <Navbar>
-        <div className="mt-8 flex flex-col justify-center items-center">
-          <h2 className="text-7xl uppercase font-bold text-yellow-500">Additional Info</h2>
-          <div>
-            <p className="text-lg font-light text-gray-700 italic">Please register your address with us for the full experience of SYV</p>
-            <div>
-              <div>
-                <label htmlFor="street">
-                  Street
-                  {errors && errors.street ? <p className="err">{errors.street}</p> : ''}
-                </label>
-                <input name="street" type="text" onChange={handleChange} />
-              </div>
-              <div>
-                <label>
-                  City
-                  {errors && errors.city ? <p className="err">{errors.city}</p> : ''}
-                </label>
-                <input name="city" type="text" onChange={handleChange} />
-              </div>
-              <div>
-                <label>
-                  State
-                  {errors && errors.state ? <p className="err">{errors.state}</p> : ''}
-                </label>
-                <input name="state" type="text" onChange={handleChange} />
-              </div>
-              <div>
-                <label>
-                  Zip
-                  {errors && errors.zip ? <p className="err">{errors.zip}</p> : ''}
-                </label>
-                <input name="zip" type="number" onChange={handleChange} />
-              </div>
-              <button onClick={submit}>Submit</button>
+    <Navbar>
+      <div className="mt-8 flex flex-col justify-center items-center">
+        <h2 className="text-7xl uppercase font-bold text-gray-800">Additional Info</h2>
+        <div>
+          <p className="text-lg font-light text-gray-700 italic">Please register your address with us for the full experience of SYV</p>
+          <div className="flex flex-col justify-center items-center">
+            <div className="w-full">
+              <label htmlFor="street">
+                {errors && errors.street ? <p className="err">{errors.street}</p> : ''}
+              </label>
+              <input name="street" type="text" onChange={handleChange} className="input-custom w-full" placeholder="Street" />
+            </div>
+            <div className="w-full">
+              <label htmlFor="city">
+                {errors && errors.city ? <p className="err">{errors.city}</p> : ''}
+              </label>
+              <input name="city" type="text" onChange={handleChange} className="input-custom w-full" placeholder="City" />
+            </div>
+            <div className="w-full">
+              <label htmlFor="state">
+                {errors && errors.state ? <p className="err">{errors.state}</p> : ''}
+              </label>
+              <input name="state" type="text" onChange={handleChange} className="input-custom w-full" placeholder="State" />
+            </div>
+            <div className="w-full">
+              <label htmlFor="zip">
+                {errors && errors.zip ? <p className="err">{errors.zip}</p> : ''}
+              </label>
+              <input name="zip" type="number" onChange={handleChange} className="input-custom w-full" placeholder="Zip Code" />
+            </div>
+            <div className="w-full">
+              <button onClick={submit} className="btn btn-outline w-full bg-white hover:bg-purple-600  ">Submit</button>
               {errors && errors.main ? <p className="err">{errors.main}</p> : ''}
             </div>
           </div>
         </div>
-      </Navbar>
-      <Footer />
-    </>
+      </div>
+    </Navbar>
   );
 };
 
