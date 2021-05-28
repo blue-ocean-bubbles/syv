@@ -196,6 +196,7 @@ class AddressForm extends Component {
           <b>Invalid.</b>
           {' '}
           The address is not recognized.
+          The address must be within the United States of.
         </div>
       );
     }
@@ -228,7 +229,6 @@ class AddressForm extends Component {
 
   render() {
     const result = this.alert();
-    console.log(result)
     return (
       <div className='w-7/12 mx-auto p-8'>
         <div className='flex flex-col justify-center items-center'>
