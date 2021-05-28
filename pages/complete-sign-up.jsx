@@ -8,6 +8,7 @@
 /* eslint-disable eol-last */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
+import axios from 'axios';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import styles from '../styles/Home.module.css';
@@ -33,6 +34,9 @@ class CompleteSignUp extends React.Component {
   contactSubmit(e) {
     e.preventDefault();
     if (this.handleValidation()) {
+      // send email and password to database
+      // axios.post('/api/data', {});
+      // redirect user to dashboard
       alert('Form submitted');
 
       this.setState({

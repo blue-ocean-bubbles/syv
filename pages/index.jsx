@@ -36,7 +36,7 @@ export default function Home() {
             </a>
 
             <a
-              href="http://localhost:3000/dashboard"
+              href="/dashboard"
               className={styles.card}
             >
               <h2>Get Notifications &rarr;</h2>
@@ -44,9 +44,7 @@ export default function Home() {
                 Sign up for election notifications sent right to your mobile phone
               </p>
             </a>
-
           </div>
-
         </div>
       </main>
       <Footer />
