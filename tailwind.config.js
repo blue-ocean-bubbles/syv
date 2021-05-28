@@ -28,11 +28,18 @@ module.exports = {
       contrast: {
         max: '100',
       },
+      brightness: {
+        max: '100',
+      },
     },
   },
   variants: {
     extend: {
       backgroundColor: ['active'],
+      filter: ['group-hover'],
+      grayscale: ['group-hover'],
+      contrast: ['group-hover'],
+      brightness: ['group-hover'],
     },
   },
   plugins: [],

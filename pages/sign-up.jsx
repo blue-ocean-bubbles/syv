@@ -6,6 +6,7 @@ import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 // components
@@ -156,7 +157,10 @@ class CompleteSignUp extends React.Component {
                     </a>
                   </Link>
                   <Link href="/api/auth/google">
-                    <a className="transition btn text-center gap-2 bg-white hover:bg-red-500 hover:text-white focus:text-white focus:bg-red-600 text-gray-800">Login With Google</a>
+                    <a className="transition btn text-center gap-2 bg-white hover:bg-red-500 hover:text-white focus:text-white focus:bg-red-600 text-gray-800 h-full w-full flex flex-row justify-center items-center gap-2 group">
+                      <Image src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width={20} height={20} className="transistion-all group-hover:filter group-hover:grayscale group-hover:contrast-max group-hover:brightness-max" />
+                      Login With Google
+                    </a>
                   </Link>
                   <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer" onClick={this.contactSubmit} />
                 </fieldset>
