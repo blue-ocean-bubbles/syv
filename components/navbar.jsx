@@ -28,17 +28,17 @@ const Navbar = ({ children, bg }) => (
               <div className="flex flex-row gap-4">
                 <Link href="/sign-in">
                   <a>
-                    <span className="btn btn-outline text-xl">Sign In</span>
+                    <span className="btn btn-outline text-xl px-6 py-3">Sign In</span>
                   </a>
                 </Link>
                 <Link href="/sign-up">
                   <a>
-                    <span className="btn btn-purple text-xl">Sign Up</span>
+                    <span className="btn btn-purple text-xl px-6 py-3">Sign Up</span>
                   </a>
                 </Link>
                 <Link href="/donate">
                   <a>
-                    <span className="btn btn-purple text-xl">Donate</span>
+                    <span className="btn btn-purple text-xl px-6 py-3">Donate</span>
                   </a>
                 </Link>
               </div>
