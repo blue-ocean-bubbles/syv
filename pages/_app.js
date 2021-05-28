@@ -13,14 +13,12 @@ export async function getServerSideProps(context) {
     try {
       const { cookie } = context.req.headers;
       const res = await axios.get('http://localhost:3000/api/user', { headers: { cookie } });
-      console.log('good', res);
       const { isLoggedIn } = res.data;
 
       if (isLoggedIn) {
         return {};
       }
     } catch (err) {
-      console.log('erre', err, 'err');
       return {
         redirect: { destination: '/sign-in', permanent: false },
       };
