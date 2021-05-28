@@ -15,7 +15,7 @@ class AddressItem extends Component {
             id={this.props.id}
             defaultValue={this.props.value}
             onChange={this.props.onChange}
-            className="form-control"
+            className="input-custom w-full"
             placeholder={this.props.placeholder}
           />
         </div>

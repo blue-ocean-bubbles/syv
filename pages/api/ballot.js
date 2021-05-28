@@ -7,6 +7,7 @@ const handler = nextConnect();
 handler.use(middleware);
 
 handler.post(async (req, res) => {
+  // console.log({ req });
   try {
     if (!req.user) {
       res.status(401).json({ message: 'Unauthorized' });
