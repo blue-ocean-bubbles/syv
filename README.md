@@ -1,9 +1,8 @@
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="public/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/blue-ocean-bubbles/syv/blob/main/public/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Secure Your Vote</h3>
@@ -11,6 +10,14 @@
   <p align="center">
     Voting has never been more accessible or more secure than with Secure Your Vote!
     <br />
+    <a href="https://github.com/blue-ocean-bubbles/syv"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="http://13.90.213.141/">View Demo</a>
+    ·
+    <a href="https://github.com/blue-ocean-bubbles/syv/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/blue-ocean-bubbles/syv/issues">Request Feature</a>
   </p>
 </p>
 
