@@ -24,6 +24,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
   </p>
 </p>
 
+
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -34,14 +36,14 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
+    <li><a href="#getting-started">Getting Started</a> </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#usage">Usage</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#walkthrough">Walkthrough</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -65,6 +67,15 @@ Here's why:
 Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
+
+### Contributers
+* [Jason Bhatti](https://github.com/bhattibytes)
+* [Marco Canchola](https://github.com/marcoantonio224)
+* [Andrew Lee](https://github.com/TurkeyFats)
+* [De'Markus Matthews](https://github.com/DManthonyx)
+* [Cody Mumford](https://github.com/codymumford)
+* [Dom Stepek](https://github.com/domstepek)
+* [Roy Xue](https://github.com/mooseygoose)
 
 ### Built With
 
@@ -108,4 +119,14 @@ You will need the following API keys in a .env.local file for authentication:
 //Do we need a config.js file for the app
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Summary
+Our App gives users the ability to sign-up and sign-in securely, get polling info, register to vote with the US government and be able to view specific election information for elections in their area. Then if a user has been validated living in the United States, they will be able to vote directly in the app securely.     
+
+### Walkthrough
+* Starting at the home page, there are three links that--even if a user doesn't have an account can access voter registration, check registration status, and view an interactive map that when a user clicks on a state will guide them to a state specific page with that state's election information.
+![image](https://user-images.githubusercontent.com/73206753/120080209-ac9e7980-c06c-11eb-95c0-140fec9f7617.png)
 
