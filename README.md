@@ -3,8 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    //put image asset here for SYV
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Secure Your Vote</h3>
@@ -12,14 +11,6 @@
   <p align="center">
     Voting has never been more accessible or more secure than with Secure Your Vote!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </p>
 
@@ -123,5 +114,20 @@ Our App gives users the ability to sign-up and sign-in securely, get polling inf
 ![image](https://user-images.githubusercontent.com/73206753/120081774-1ec68c80-c074-11eb-865f-397055c74434.png)
 * To sign-up, click the sign-up button on the top right of the homepage. Then, the user enters the requisite information: first name, last name, email, and password. Both email and password have validations that will check if they are properly formatted: the password be between 8 - 13 characters and that also contain at least one uppercase, one lowercase, and one special character.
 * We’ve also implemented single sign on for both Google and Facebook. We’ll circle back to this and have the backend team explain their process. 
-
+![image](https://user-images.githubusercontent.com/73206753/120082373-79adb300-c077-11eb-8b4c-dd9c8161e219.png)
+* Next we come to the Address Validation where first you can search for an address then once it is found populate the rest of the fields and validate the address is in the United States with a special confetti animation on the inserting a valid address. 
+![image](https://user-images.githubusercontent.com/73206753/120082435-f3de3780-c077-11eb-8c4a-1b8c21c76a42.png)
+* Now that the user is Authenticated and Validated they are now able to see a user specific dashboard with several tabs with information tailored to the user’s specific location. 
+<h4>Dashboard with tabbed side navigation bar you will notice has:</h4>
+<ol>
+  <li><p>Voter Registration - passes user info to a government secured website embedded in our application by use of an iFrame
+</p></li>
+  <li><p>Voter Check Registration</p></li>
+  <li><p>Sign-up For Reminders on elections happening in your area
+</p></li>
+  <li><p>Request Absentee Ballot
+</p></li>
+  <li><p>Pledge to Vote - if user is not old enough to vote, sends a reminder to vote once eligible</p></li>
+  <li><p>Ability to Vote - user sees voter ballot specific to the users address</p></li>
+</ol>
 
