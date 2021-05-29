@@ -57,8 +57,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-
-Our App gives users the ability to sign-up and sign-in securely, get polling info, register to vote with the US government and be able to view specific election information for elections in their area. Then if a user has been validated living in the United States, they will be able to vote directly in the app securely.
+  Our team of highly skilled engineers envisioned an app that accomplished a high level of security while also offering many user focused experiences that create a sticky user experience while also being aesthetically pleasing and easy to use.   We have incorporated many features that allow customization based on user specific information that is securely stored and offer features that guide the user to having all the election information at their fingertips.   
+  Our App gives users the ability to sign-up and sign-in securely, get polling info, register to vote with the US government and be able to view specific election information for elections in their area. Then if a user has been validated living in the United States, they will be able to vote directly in the app securely.
 
 ### Contributers
 * [Jason Bhatti](https://github.com/bhattibytes)
