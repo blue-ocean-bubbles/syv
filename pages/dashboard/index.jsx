@@ -41,7 +41,7 @@ export async function getServerSideProps(context) {
     let voterInfo;
     if (user.address) {
       const address = `${user.address.street},${user.address.city},${user.address.state},${user.address.zip}`;
-      voterInfo = voterInfoQuery // (await axios.get('https://www.googleapis.com/civicinfo/v2/voterinfo', { params: { key, address, electionId: 2000 } })).data;
+      voterInfo = (await axios.get('https://www.googleapis.com/civicinfo/v2/voterinfo', { params: { key, address, electionId: 2000 } })).data;
     }
     return {
       props: {
