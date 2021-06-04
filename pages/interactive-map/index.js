@@ -57,17 +57,20 @@ class App extends Component {
       <Navbar>
         <div className="flex flex-col bg-blue p-10 justify-center items-center">
           <h1 className="text-8xl font-black uppercase text-center">
-            Get Information By State
+            Get Information
+          </h1>
+          <h1 className="text-8xl font-black text-yellow-400 uppercase text-center">
+            By State
           </h1>
           <div className="">
             <USAMap
               onClick={this.mapHandler}
               style={{ zIndex: 50 }}
-              defaultFill="rgb(16, 39, 131)"
+              defaultFill="rgb(91 34 182)"
               width={1000}
               height={1000}
             />
-            {/* <g className="bg-black-500">{this.buildPaths()}</g> */}
+            <g className="bg-black-500">{this.buildPaths()}</g>
           </div>
         </div>
       </Navbar>

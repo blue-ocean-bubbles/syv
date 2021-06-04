@@ -57,10 +57,8 @@ export default function State(props) {
     <ThemeProvider theme={theme}>
       <Navbar>
         <div className="lg:w-8/12 w-10/12 mx-auto">
-          <h1 className="text-6xl font-bold uppercase p-8">{props.stateName}</h1>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-            <path fill="#D3D3D3" data-name={props.stateAbbrev} className={`${props.stateAbbrev} state`} d={props.stateDimensions} />
-          </svg>
+          <h1 className="text-6xl font-bold font-serif text-purple-800 uppercase p-8 text-center">{props.stateName}</h1>
+          <img className="px-4 py-4 place-self-center" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} alt={props.stateName} width="500" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
           <Tabs
             onChange={(_, e) => setView(e)}
             value={view}
@@ -97,6 +95,9 @@ export default function State(props) {
               <p>{props.votingTypes}</p>
             </TabPanel>
           </SwipeableViews>
+          <a href="/interactive-map">
+            <h3 className="text-xl font-bold font-serif text-purple-800 uppercase p-8 text-center hover:underline">Back To Interactive Map</h3>
+          </a>
         </div>
       </Navbar>
     </ThemeProvider>
@@ -107,9 +108,11 @@ export async function getServerSideProps(context) {
   const dataStates = data();
   const stateAbbr = context.query.state;
   const state = dataStates[stateAbbr];
+  const stateNameNormalized = state.name.replace(/\s+/g, '').toLowerCase();
 
   return {
     props: {
+      stateNameOne: stateNameNormalized,
       stateName: state.name,
       stateDimensions: state.dimensions,
       ballotProcess: state.absenteeBallotProcess,
