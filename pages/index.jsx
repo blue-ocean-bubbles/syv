@@ -50,7 +50,7 @@ export default function Home() {
                 Voting Online Has Never Been More Secure or Accessible Than With Secure Your Vote
               </div>
             </div>
-            <div className="flex flex-row flex-wrap gap-4">
+            <div className="flex flex-row flex-wrap gap-4 mx-10">
               <StyledLink href="https://www.vote.org/register-to-vote/" type="a">
                 <h2>Register To Vote</h2>
               </StyledLink>
