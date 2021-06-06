@@ -32,6 +32,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Secure Your Vote</title>
+        <html lang="en-us" />
         <meta name="description" content="Online voting for Colorado" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -21,7 +21,7 @@ const Navbar = ({ children, bg }) => (
             <div className="flex flex-col md:pb-0 justify-between items-center w-8/12 mx-auto md:flex-row pb-10">
               <Link href="/">
                 <a className="flex flex-row text-white items-center text-3xl font-extrabold uppercase gap-5">
-                  <Image src="/logo.png" className="filter invert grayscale contrast-max brightness-100 shadow-md" height={150} width={150} />
+                  <Image src="/logo.png" alt="logo" className="filter invert grayscale contrast-max brightness-100 shadow-md" height={150} width={150} />
                   <span>Secure Your Vote</span>
                 </a>
               </Link>
@@ -55,7 +55,7 @@ const Navbar = ({ children, bg }) => (
               >
                 Powered by
                 {' '}
-                <Image src="https://www.seoblog.com/wp-content/uploads/2019/10/BOGT-standard-logo.png" width={100} height={30} />
+                <Image src="https://www.seoblog.com/wp-content/uploads/2019/10/BOGT-standard-logo.png" width={100} height={30} alt="footer-logo" />
               </a>
             </footer>
           </div>
