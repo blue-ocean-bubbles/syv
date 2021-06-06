@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
@@ -9,6 +10,7 @@
 // /* eslint-disable react/prop-types */
 import SwipeableViews from 'react-swipeable-views';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
@@ -56,8 +58,8 @@ export default function State(props) {
   return (
     <ThemeProvider theme={theme}>
       <Navbar>
-        <div className="lg:w-8/12 w-10/12 mx-auto">
-          <h1 className="text-6xl font-bold font-serif text-purple-800 uppercase p-8 text-center">{props.stateName}</h1>
+        <div className="lg:w-8/12 w-10/12 mx-auto flex flex-col mb-6">
+          <h1 className="text-6xl font-black text-gray-800 uppercase pt-8 text-center">{props.stateName}</h1>
           <img className="px-4 py-4 place-self-center" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} alt={props.stateName} width="500" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
           <Tabs
             onChange={(_, e) => setView(e)}
@@ -95,9 +97,13 @@ export default function State(props) {
               <p>{props.votingTypes}</p>
             </TabPanel>
           </SwipeableViews>
-          <a href="/interactive-map">
-            <h3 className="text-xl font-bold font-serif text-purple-800 uppercase p-8 text-center hover:underline">Back To Interactive Map</h3>
-          </a>
+          <div className="self-center justify-self-center">
+            <Link href="/interactive-map">
+              <a className="btn btn-purple flex-grow-0 text-center">
+                Back To Interactive Map
+              </a>
+            </Link>
+          </div>
         </div>
       </Navbar>
     </ThemeProvider>

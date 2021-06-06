@@ -38,8 +38,8 @@ export default function Home() {
 
       <main className="relative h-screen">
         <Navbar bg>
-          <div className="flex flex-col mt-12 items-center">
-            <div className="mt-20 mb-10">
+          <div className="flex flex-col items-center justify-center h-full">
+            <div className="mb-10">
               <div className="uppercase text-7xl font-black text-white text-center">
                 Election information
               </div>

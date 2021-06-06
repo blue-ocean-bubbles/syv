@@ -16,6 +16,7 @@
 import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
 import { withRouter } from 'next/router';
+import Head from 'next/head';
 import Navbar from '../../components/navbar';
 import data from '../../components/mapData';
 import USAState from '../../components/USAState';
@@ -56,10 +57,13 @@ class App extends Component {
     return (
       <Navbar>
         <div className="flex flex-col bg-blue p-10 justify-center items-center">
+          <Head>
+            <title>Secure Your Vote - Interactive Map</title>
+          </Head>
           <h1 className="text-8xl font-black uppercase text-center">
             Get Information
           </h1>
-          <h1 className="text-8xl font-black text-yellow-400 uppercase text-center">
+          <h1 className="text-8xl font-black text-yellow-400 uppercase text-center" style={{textShadow: '0 0 3px #ddd'}}>
             By State
           </h1>
           <div className="">
@@ -67,8 +71,6 @@ class App extends Component {
               onClick={this.mapHandler}
               style={{ zIndex: 50 }}
               defaultFill="rgb(91 34 182)"
-              width={1000}
-              height={1000}
             />
             <g className="bg-black-500">{this.buildPaths()}</g>
           </div>
