@@ -21,7 +21,6 @@ class AddressInput extends Component {
           <AddressItem id="city" value={this.props.city} onChange={this.handleChange} placeholder="City" />
           <AddressItem id="state" value={this.props.state} onChange={this.handleChange} placeholder="State" />
           <AddressItem id="postalCode" value={this.props.postalCode} onChange={this.handleChange} placeholder="Postal Code" />
-          {/* <AddressItem id="country" value={this.props.country} onChange={this.handleChange} placeholder="Country" /> */}
         </div>
       </div>
     );
