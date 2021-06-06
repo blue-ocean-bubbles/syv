@@ -4,6 +4,9 @@ import '../styles/globals.css';
 import axios from 'axios';
 import Router from 'next/router';
 
+// Disable all console logs.
+console.log = ()=> {};
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }

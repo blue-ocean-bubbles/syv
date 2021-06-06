@@ -15,8 +15,6 @@ import AddressSuggest from './AddressSuggest';
 import AddressInput from './AddressInput';
 import styles from '../../styles/Home.module.css';
 
-const { APP_ID_GEO, APP_KEY_GEO } = require('../../config').default;
-
 let isValid = false;
 
 class AddressForm extends Component {
@@ -43,26 +41,26 @@ class AddressForm extends Component {
     axios.get('https://geocode.search.hereapi.com/v1/geocode',
       {
         params: {
-          APP_ID_GEO,
-          apiKey: APP_KEY_GEO,
+          APP_ID_GEO: this.props.APP_ID_GEO,
+          apiKey: this.props.APP_KEY_GEO,
           q: query,
           maxresults: 1,
         },
       }).then((response) => {
-      if (response.data.items.length > 0) {
-        const { id } = response.data.items[0];
-        const { address } = response.data.items[0];
-        self.setState({
-          address,
-          query,
-          locationId: id,
-          fullAddress: address.label,
-        });
-      } else {
-        const state = self.getInitialState();
-        self.setState(state);
-      }
-    });
+        if (response.data.items.length > 0) {
+          const { id } = response.data.items[0];
+          const { address } = response.data.items[0];
+          self.setState({
+            address,
+            query,
+            locationId: id,
+            fullAddress: address.label,
+          });
+        } else {
+          const state = self.getInitialState();
+          self.setState(state);
+        }
+      });
   }
 
   getInitialState() {
@@ -98,8 +96,8 @@ class AddressForm extends Component {
 
   onCheck(evt) {
     const params = {
-      APP_ID_GEO,
-      apiKey: APP_KEY_GEO,
+      APP_ID_GEO: this.props.APP_ID_GEO,
+      apiKey: this.props.APP_KEY_GEO,
       q: this.state.fullAddress,
     };
 
@@ -117,39 +115,39 @@ class AddressForm extends Component {
     axios.get('https://geocode.search.hereapi.com/v1/geocode',
       {
         params: {
-          APP_ID_GEO,
-          apiKey: APP_KEY_GEO,
+          APP_ID_GEO: this.props.APP_ID_GEO,
+          apiKey: this.props.APP_KEY_GEO,
           q: this.state.fullAddress,
           maxresults: 1,
         },
       }).then((response) => {
-      const view = response.data.items;
-      if (view.length > 0 && view[0].access.length > 0) {
-        const location = view[0];
+        const view = response.data.items;
+        if (view.length > 0 && view[0].access.length > 0) {
+          const location = view[0];
 
-        self.setState({
-          isChecked: 'true',
-          locationId: '',
-          query: location.address.label,
-          address: {
-            street: `${location.address.houseNumber} ${location.address.street}`,
-            city: location.address.city,
-            state: location.address.state,
-            postalCode: location.address.postalCode,
-            country: location.address.countryName,
-          },
-          coords: {
-            lat: location.access[0].lat,
-            lon: location.access[0].lng,
-          },
-        });
-      } else {
-        self.setState({
-          isChecked: true,
-          coords: null,
-        });
-      }
-    })
+          self.setState({
+            isChecked: 'true',
+            locationId: '',
+            query: location.address.label,
+            address: {
+              street: `${location.address.houseNumber} ${location.address.street}`,
+              city: location.address.city,
+              state: location.address.state,
+              postalCode: location.address.postalCode,
+              country: location.address.countryName,
+            },
+            coords: {
+              lat: location.access[0].lat,
+              lon: location.access[0].lng,
+            },
+          });
+        } else {
+          self.setState({
+            isChecked: true,
+            coords: null,
+          });
+        }
+      })
       .catch((error) => {
         console.log('caught failed query', error);
         self.setState({
@@ -203,7 +201,7 @@ class AddressForm extends Component {
 
     const co = this.state.address;
     const pos = co.postalCode.split('-')[0];
-    console.log(this.state.address);
+
     if (co.country === 'United States') {
       isValid = true;
       return (
@@ -232,8 +230,8 @@ class AddressForm extends Component {
     return (
       <div className="w-7/12 mx-auto p-8">
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-7xl uppercase font-bold text-gray-800">Additional Info</h2>
-          <p className="text-lg font-light text-gray-700 italic">Please register your address with us for the full experience of SYV</p>
+          <h2 className="text-7xl uppercase font-bold text-gray-800 text-center">Additional Info</h2>
+          <p className="text-lg font-light text-gray-700 text-center italic">Please register your address with us for the full experience of SYV</p>
         </div>
         <AddressSuggest
           query={this.state.query}
