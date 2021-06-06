@@ -18,7 +18,7 @@ const Navbar = ({ children, bg }) => (
       <div className="absolute top-0 w-full z-50 h-full">
         <div className="h-full flex flex-col">
           <div className={`${bg ? '' : 'shadow-lg bg-gray-500 '}flex flex-row justify-center`}>
-            <div className="flex flex-row justify-between items-center w-8/12 mx-auto">
+            <div className="flex flex-col md:pb-0 justify-between items-center w-8/12 mx-auto md:flex-row pb-10">
               <Link href="/">
                 <a className="flex flex-row text-white items-center text-3xl font-extrabold uppercase gap-5">
                   <Image src="/logo.png" className="filter invert grayscale contrast-max brightness-100 shadow-md" height={150} width={150} />
@@ -27,24 +27,24 @@ const Navbar = ({ children, bg }) => (
               </Link>
               <div className="flex flex-row gap-4">
                 <Link href="/sign-in">
-                  <a>
+                  <a className="flex-shrink-0">
                     <span className="btn btn-outline text-xl px-6 py-3">Sign In</span>
                   </a>
                 </Link>
                 <Link href="/sign-up">
-                  <a>
+                  <a className="flex-shrink-0">
                     <span className="btn btn-purple text-xl px-6 py-3">Sign Up</span>
                   </a>
                 </Link>
-                <Link href="/donate">
+                {/* <Link href="/donate">
                   <a>
                     <span className="btn btn-purple text-xl px-6 py-3">Donate</span>
                   </a>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
-          <div className={`h-full ${bg ? '' : 'bg-gray-100'}`}>{children}</div>
+          <div className={`${bg ? '' : 'bg-gray-100'} flex-grow`}>{children}</div>
           <div className="mt-auto w-full border-t-2 border-solid border-gray-400 bg-gray-100 bg-opacity-80">
             <footer>
               <a

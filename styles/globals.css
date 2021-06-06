@@ -34,3 +34,11 @@
 .input-custom {
   @apply rounded-md shadow-md p-4 m-2 border border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent;
 }
+
+path {
+  pointer-events: all;
+}
+path:hover {
+  fill: yellow;
+  cursor: pointer;
+}

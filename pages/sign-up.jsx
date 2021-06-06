@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-plusplus */
+/* eslisnt-disable no-plusplus */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import axios from 'axios';
@@ -156,7 +156,7 @@ class CompleteSignUp extends React.Component {
                   <input className="input-custom" refs="password" type="password" size="30" placeholder="Password" onChange={this.handleChange.bind(this, 'password')} value={this.state.fields.password || ''} />
                   {this.state.errors.password && <span className="text-red-500">{this.state.errors.password}</span>}
 
-                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer" onClick={this.contactSubmit} />
+                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer p-4" onClick={this.contactSubmit} />
                   <Link href="/api/auth/facebook">
                     <a className="transition btn text-center bg-blue-600 hover:bg-blue-700 text-white flex flex-row gap-2 justify-center items-center focus:bg-blue-800 p-4">
                       <FacebookIcon />
@@ -169,7 +169,6 @@ class CompleteSignUp extends React.Component {
                       Login With Google
                     </a>
                   </Link>
-                  <input type="submit" value="Sign-Up" className="btn btn-purple cursor-pointer p-4" onClick={this.contactSubmit} />
                 </fieldset>
               </div>
             </form>

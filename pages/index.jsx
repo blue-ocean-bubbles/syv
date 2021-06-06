@@ -11,7 +11,7 @@ const StyledLink = ({ children, href, type }) => {
   return (
     <span className={styles}>
       {type === 'a' && (
-        <a href={href}>{children}</a>
+        <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
       )}
       {type === 'l' && (
         <Link href={href}>
@@ -50,7 +50,7 @@ export default function Home() {
                 Voting Online Has Never Been More Secure or Accessible Than With Secure Your Vote
               </div>
             </div>
-            <div className="flex flex-row flex-wrap gap-4">
+            <div className="flex flex-row flex-wrap gap-4 mx-10">
               <StyledLink href="https://www.vote.org/register-to-vote/" type="a">
                 <h2>Register To Vote</h2>
               </StyledLink>
