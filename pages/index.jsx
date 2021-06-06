@@ -11,7 +11,7 @@ const StyledLink = ({ children, href, type }) => {
   return (
     <span className={styles}>
       {type === 'a' && (
-        <a href={href}>{children}</a>
+        <a href={href} target="_blank" rel="noopener noreferrer">{children}</a>
       )}
       {type === 'l' && (
         <Link href={href}>
