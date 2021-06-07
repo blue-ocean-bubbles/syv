@@ -195,7 +195,7 @@ export async function getServerSideProps(context) {
 
   const { cookie } = context.req.headers;
   try {
-    const res = await axios.get('http://localhost:3000/api/user', { headers: { cookie } });
+    const res = await axios.get('/api/user', { headers: { cookie } });
 
     const { user } = res.data;
 

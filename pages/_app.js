@@ -15,7 +15,7 @@ export async function getServerSideProps(context) {
   if (Router.pathname.includes('/dashboard')) {
     try {
       const { cookie } = context.req.headers;
-      const res = await axios.get('http://localhost:3000/api/user', { headers: { cookie } });
+      const res = await axios.get('/api/user', { headers: { cookie } });
       const { isLoggedIn } = res.data;
 
       if (isLoggedIn) {

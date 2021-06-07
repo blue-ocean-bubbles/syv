@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt';
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_ID,
     clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: "http://localhost:3000/api/auth/facebook/callback",
+    callbackURL: "/api/auth/facebook/callback",
     profileFields: ['email', 'name', 'displayName', 'photos']
     },
     function(accessToken, refreshToken, profile, done) {
