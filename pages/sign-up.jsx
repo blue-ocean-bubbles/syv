@@ -148,7 +148,7 @@ class CompleteSignUp extends React.Component {
           <div className="w-full h-full flex flex-col flex-grow mt-10 w-8/12 mx-auto">
             <form className="" style={{ zIndex: '50' }} name="contactform" onSubmit={this.contactSubmit}>
               <div className="">
-                <fieldset className="flex flex-col gap-4 w-5/12 mx-auto pb-4">
+                <fieldset className="flex flex-col gap-4 w-5/12 mx-auto pb-8">
                   <input className="input-custom" refs="firstName" type="text" size="30" placeholder="First Name" onChange={this.handleChange.bind(this, 'firstName')} value={this.state.fields.firstName || ''} />
                   <input className="input-custom" refs="lastName" type="text" size="30" placeholder="Last Name" onChange={this.handleChange.bind(this, 'lastName')} value={this.state.fields.lastName || ''} />
                   <input className="input-custom" refs="email" type="text" size="30" placeholder="Email" onChange={this.handleChange.bind(this, 'email')} value={this.state.fields.email || ''} />
