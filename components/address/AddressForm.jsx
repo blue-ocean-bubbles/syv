@@ -178,7 +178,7 @@ class AddressForm extends Component {
       data: address,
     });
     // if updated successfully
-    if (res.status === 204) {
+    if (res.status === 200) {
       this.props.router.push('/dashboard');
     }
   }
