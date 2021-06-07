@@ -61,7 +61,7 @@ export default function State(props) {
       <Navbar>
         <div className="lg:w-8/12 w-10/12 mx-auto flex flex-col mb-6">
           <h1 className="text-6xl font-black text-gray-800 uppercase pt-8 text-center">{props.stateName}</h1>
-          <Image className="p-4" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} layout="responsive" width={1000} height={250} objectFit="contain" alt={props.stateName} />
+          <Image className="p-4" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} layout="responsive" width={800} height={200} objectFit="contain" alt={props.stateName} />
           <Tabs
             onChange={(_, e) => setView(e)}
             value={view}
