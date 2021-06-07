@@ -145,7 +145,7 @@ class CompleteSignUp extends React.Component {
     return (
       <div className="flex flex-col h-screen">
         <Navbar>
-          <div className="w-full h-full flex flex-col flex-grow mt-10 w-8/12 mx-auto">
+          <div className="w-full h-full flex flex-col flex-grow mt-10 w-8/12 mx-auto pb-10">
             <form className="" style={{ zIndex: '50' }} name="contactform" onSubmit={this.contactSubmit}>
               <div className="">
                 <fieldset className="flex flex-col gap-4 w-5/12 mx-auto pb-8">
