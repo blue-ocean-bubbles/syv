@@ -5,6 +5,7 @@ module.exports = {
       'www.seoblog.com',
       'www.history.com',
       'upload.wikimedia.org',
+      'www.theus50.com',
     ],
   },
 };

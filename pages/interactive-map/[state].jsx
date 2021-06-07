@@ -11,6 +11,7 @@
 import SwipeableViews from 'react-swipeable-views';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
@@ -60,7 +61,7 @@ export default function State(props) {
       <Navbar>
         <div className="lg:w-8/12 w-10/12 mx-auto flex flex-col mb-6">
           <h1 className="text-6xl font-black text-gray-800 uppercase pt-8 text-center">{props.stateName}</h1>
-          <img className="px-4 py-4 place-self-center" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} alt={props.stateName} width="500" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+          <Image className="p-4" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} layout="responsive" width={1000} height={250} objectFit="contain" alt={props.stateName} />
           <Tabs
             onChange={(_, e) => setView(e)}
             value={view}
@@ -97,7 +98,7 @@ export default function State(props) {
               <p>{props.votingTypes}</p>
             </TabPanel>
           </SwipeableViews>
-          <div className="self-center justify-self-center">
+          <div className="self-center justify-self-center pt-4">
             <Link href="/interactive-map">
               <a className="btn btn-purple flex-grow-0 text-center">
                 Back To Interactive Map

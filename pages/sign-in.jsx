@@ -50,7 +50,7 @@ const SignIn = () => {
         <div className="w-full h-full flex flex-col flex-grow mt-10 w-8/12 mx-auto">
           <form className="" style={{ zIndex: '50' }} onSubmit={handleSubmit}>
             <div>
-              <fieldset className="flex flex-col gap-4 w-5/12 mx-auto">
+              <fieldset className="flex flex-col gap-4 w-5/12 mx-auto pb-4">
                 <input className="input-custom" name="email" refs="email" type="text" size="30" placeholder="Email" onChange={handleInputChange} value={values.email || ''} />
                 <input className="input-custom" name="password" refs="password" type="password" size="30" placeholder="Password" onChange={handleInputChange} value={values.password || ''} />
                 {showError && <span className="text-red-500">Invalid Credentials</span>}
