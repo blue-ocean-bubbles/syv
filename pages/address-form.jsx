@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable arrow-body-style */
 /* eslint-disable react/button-has-type */

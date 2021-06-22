@@ -16,6 +16,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import {
   Tabs, Tab, Box, Typography,
 } from '@material-ui/core';
+import Image from 'next/image';
 import Navbar from '../../components/navbar';
 import data from '../../components/mapData';
 
@@ -60,7 +61,7 @@ export default function State(props) {
       <Navbar>
         <div className="lg:w-8/12 w-10/12 mx-auto flex flex-col mb-6">
           <h1 className="text-6xl font-black text-gray-800 uppercase pt-8 text-center">{props.stateName}</h1>
-          <img className="px-4 py-4 place-self-center" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} alt={props.stateName} width="500" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
+          <Image className="px-4 py-4 place-self-center" src={`http://www.theus50.com/images/state-licenses/${props.stateNameOne}-license.jpg`} alt={props.stateName} width="300" height="500" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
           <Tabs
             onChange={(_, e) => setView(e)}
             value={view}
