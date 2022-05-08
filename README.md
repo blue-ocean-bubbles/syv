@@ -52,7 +52,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![image](https://user-images.githubusercontent.com/73206753/120080209-ac9e7980-c06c-11eb-95c0-140fec9f7617.png)
 
 The aim of this project was to create a secure and easy-to-use voting app that also showed election information catered to the user's location. Our team of highly skilled engineers envisioned a method that accomplished a high level of security while also offering many user focused experiences that create a sticky user experience while also being aesthetically pleasing and accessible. We have incorporated many features that allow customization based on user specific information that is securely stored and offer features that guide the user to having all the election information at their fingertips.   
  
@@ -104,7 +104,6 @@ You will need the following API keys in a .env.local file for authentication:
 * Facebook civics API key (https://developers.facebook.com/docs/)
 * Google civics API key(https://developers.google.com/civic-information/docs/using_api)
 
-//Do we need a config.js file for the app
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
