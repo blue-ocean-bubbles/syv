@@ -63,7 +63,7 @@ class App extends Component {
           <h1 className="text-8xl font-black uppercase text-center">
             Get Information
           </h1>
-          <h1 className="text-8xl font-black text-yellow-400 uppercase text-center" style={{textShadow: '0 0 3px #ddd'}}>
+          <h1 className="text-8xl font-black text-yellow-400 uppercase text-center" style={{ textShadow: '0 0 3px #ddd' }}>
             By State
           </h1>
           <div className="">

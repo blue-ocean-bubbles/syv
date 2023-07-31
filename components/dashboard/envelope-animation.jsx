@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '../../styles/envelope.module.css';
 
 export default function EnvelopeAnimation({ show }) {
-
   return (
     <div className={styles.bg}>
       <div className={!show ? styles.contact : `${styles.contact} ${styles.transition}`}>

@@ -128,7 +128,7 @@ class CompleteSignUp extends React.Component {
       this.setState({
         errors: {
           email: 'Email already taken',
-        }
+        },
       });
     }
   }

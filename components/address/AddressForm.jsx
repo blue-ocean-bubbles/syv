@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable react/prop-types */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable no-sequences */
@@ -47,20 +48,20 @@ class AddressForm extends Component {
           maxresults: 1,
         },
       }).then((response) => {
-        if (response.data.items.length > 0) {
-          const { id } = response.data.items[0];
-          const { address } = response.data.items[0];
-          self.setState({
-            address,
-            query,
-            locationId: id,
-            fullAddress: address.label,
-          });
-        } else {
-          const state = self.getInitialState();
-          self.setState(state);
-        }
-      });
+      if (response.data.items.length > 0) {
+        const { id } = response.data.items[0];
+        const { address } = response.data.items[0];
+        self.setState({
+          address,
+          query,
+          locationId: id,
+          fullAddress: address.label,
+        });
+      } else {
+        const state = self.getInitialState();
+        self.setState(state);
+      }
+    });
   }
 
   getInitialState() {
@@ -121,33 +122,33 @@ class AddressForm extends Component {
           maxresults: 1,
         },
       }).then((response) => {
-        const view = response.data.items;
-        if (view.length > 0 && view[0].access.length > 0) {
-          const location = view[0];
+      const view = response.data.items;
+      if (view.length > 0 && view[0].access.length > 0) {
+        const location = view[0];
 
-          self.setState({
-            isChecked: 'true',
-            locationId: '',
-            query: location.address.label,
-            address: {
-              street: `${location.address.houseNumber} ${location.address.street}`,
-              city: location.address.city,
-              state: location.address.state,
-              postalCode: location.address.postalCode,
-              country: location.address.countryName,
-            },
-            coords: {
-              lat: location.access[0].lat,
-              lon: location.access[0].lng,
-            },
-          });
-        } else {
-          self.setState({
-            isChecked: true,
-            coords: null,
-          });
-        }
-      })
+        self.setState({
+          isChecked: 'true',
+          locationId: '',
+          query: location.address.label,
+          address: {
+            street: `${location.address.houseNumber} ${location.address.street}`,
+            city: location.address.city,
+            state: location.address.state,
+            postalCode: location.address.postalCode,
+            country: location.address.countryName,
+          },
+          coords: {
+            lat: location.access[0].lat,
+            lon: location.access[0].lng,
+          },
+        });
+      } else {
+        self.setState({
+          isChecked: true,
+          coords: null,
+        });
+      }
+    })
       .catch((error) => {
         console.log('caught failed query', error);
         self.setState({

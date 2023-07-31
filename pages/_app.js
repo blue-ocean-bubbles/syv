@@ -1,16 +1,16 @@
+/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/react-in-jsx-scope */
 import '../styles/globals.css';
 import axios from 'axios';
 import Router from 'next/router';
 
-// Disable all console logs.
-console.log = ()=> {};
-
+// eslint-disable-next-line react/prop-types
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
+// eslint-disable-next-line consistent-return
 export async function getServerSideProps(context) {
   if (Router.pathname.includes('/dashboard')) {
     try {
