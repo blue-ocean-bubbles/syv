@@ -2,7 +2,6 @@
 import passport from 'passport';
 import { Strategy as FacebookStrategy } from 'passport-facebook';
 import User from '../../models/User';
-import bcrypt from 'bcrypt';
 
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEBOOK_ID,

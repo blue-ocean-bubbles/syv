@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 // import Footer from '../components/footer';
@@ -5,8 +6,8 @@ import axios from 'axios';
 import Link from 'next/link';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Image from 'next/image';
-import Navbar from '../components/navbar';
 import { useRouter } from 'next/router';
+import Navbar from '../components/navbar';
 
 const initialValues = {
   email: '',
