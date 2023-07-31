@@ -2,7 +2,6 @@
 import passport from 'passport';
 import { OAuth2Strategy } from 'passport-google-oauth'
 import User from '../../models/User';
-import bcrypt from 'bcrypt';
 const GoogleStrategy = OAuth2Strategy
 
 // Use the GoogleStrategy within Passport.

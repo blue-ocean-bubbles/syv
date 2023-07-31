@@ -1,6 +1,6 @@
 /* eslint-disable */
 import nextConnect from 'next-connect';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import middleware from '../../server/middlewares';
 import User from '../../server/models/User';
 // create handler for middleware
