@@ -10,12 +10,11 @@ const GoogleStrategy = OAuth2Strategy
 //   credentials (in this case, an accessToken, refreshToken, and Google
 //   profile), and invoke a callback with a user object.
 
-
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     //callbackURL -> after logging in redirected to
-    callbackURL: "http://syv.eastus.cloudapp.azure.com/api/auth/google/callback",
+    callbackURL: "https://syv.vercel.app/api/auth/google/callback",
   },
   function(accessToken, refreshToken, profile, done) {
        User.findOne({ email:  profile.emails[0].value })

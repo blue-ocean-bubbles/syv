@@ -6,6 +6,7 @@ module.exports = {
       'www.history.com',
       'upload.wikimedia.org',
       'www.theus50.com',
+      'm.media-amazon.com',
     ],
   },
 };

@@ -174,12 +174,12 @@ class AddressForm extends Component {
       zip: postalCode,
     };
     const res = await axios({
-      url: '/api/user',
+      url: 'https://syv.vercel.app/api/user',
       method: 'PUT',
       data: address,
     });
     // if updated successfully
-    if (res.status === 204) {
+    if (res.status === 200) {
       this.props.router.push('/dashboard');
     }
   }

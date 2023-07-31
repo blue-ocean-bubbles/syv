@@ -12,7 +12,7 @@ const Navbar = ({ children, bg }) => (
     <div className="top-0 w-full inline-block h-full">
       {bg && (
         <div className="inline-block top-0 bg-gradient-to-r from-blue-900 via-blue-900 to-transparent relative w-full h-full z-50">
-          <Image className="bg-center filter h-full relative opacity-60 contrast-120 brightness-40" style={{ zIndex: '-1' }} src="https://www.history.com/.image/t_share/MTU3ODc4NjgxMDkyNjk1MzY5/ask-bald-eagle-istock_000017215186large-2.jpg" alt="background" layout="fill" objectFit="cover" objectPosition="center 25%" />
+          <Image className="bg-center filter h-full relative opacity-60 contrast-120 brightness-40" style={{ zIndex: '-1' }} src="https://m.media-amazon.com/images/I/81UL0LVE1oL.jpg" alt="background" layout="fill" objectFit="cover" objectPosition="center 25%" />
         </div>
       )}
       <div className="absolute top-0 w-full z-50 h-full">
@@ -36,11 +36,6 @@ const Navbar = ({ children, bg }) => (
                     <span className="btn btn-purple text-xl px-6 py-3">Sign Up</span>
                   </a>
                 </Link>
-                {/* <Link href="/donate">
-                  <a>
-                    <span className="btn btn-purple text-xl px-6 py-3">Donate</span>
-                  </a>
-                </Link> */}
               </div>
             </div>
           </div>

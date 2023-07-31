@@ -38,7 +38,7 @@ handler.put(async (req, res) => {
       // find user via mongoose model and update address
       await User.updateOne({ email: email }, { address: req.body });
       // redirect user to dashboard
-      res.status(204).json({message:'Updated user.'});
+      res.status(200).json({message:'Updated user.'});
     } else {
       // if not, return unauthorized error
       res.status(401).json({ message: 'Unauthorized to update user.' });
